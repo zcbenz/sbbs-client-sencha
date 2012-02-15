@@ -1,14 +1,9 @@
-Ext.require([
-    'Ext.TitleBar'
-]);
-
 Ext.application({
     name: 'Sbbs',
 
-//    models: ['User', 'HomePage'],
-    views: ['Main'],
-
-    launch: function() {
-        Ext.Viewport.add(Ext.create('Sbbs.view.Main'));
-    }
+    views: ['Front', 'Topten', 'Favorites'],
+    stores: ['Sections'],
+    controllers: ['Front', 'Topten', 'Favorites'],
+    models: ['Section', 'Board', 'Topic'],
+    profiles: ['Tablet', 'Phone']
 });
