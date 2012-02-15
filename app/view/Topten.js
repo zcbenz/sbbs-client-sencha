@@ -3,6 +3,7 @@ Ext.define('Sbbs.view.Topten', {
     alias: 'widget.topten',
 
     config: {
+        layout: 'vbox',
         items: [
             {
                 xtype: 'titlebar',
@@ -10,14 +11,21 @@ Ext.define('Sbbs.view.Topten', {
 
                 items: [
                     {
+                        id: 'topten-refresh',
                         text: '刷新',
                         align: 'right'
                     }
                 ]
             },
             {
-                id: 'toptenList',
-                xtype: 'list'
+                id: 'topten-list',
+                xtype: 'list',
+                flex: 1,
+                loadingText: '载入中...',
+                emptyText: '无法获取十大话题',
+
+                store: Ext.create('Sbbs.store.Topten'),
+                itemTpl: '<div>{title}</div>'
             }
         ]
     }

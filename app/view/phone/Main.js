@@ -6,18 +6,6 @@ Ext.define('Sbbs.view.phone.Main', {
         activeTab: 0,
         tabBarPosition: 'bottom',
 
-        tabBar: {
-            layout: {
-                pack: 'center',
-                align: 'center'
-            },
-            docked: 'bottom',
-            scrollable: {
-                direction: 'horizontal',
-                indicators: false
-            }
-        },
-
         items: [
             {
                 title: '首页',
@@ -36,7 +24,8 @@ Ext.define('Sbbs.view.phone.Main', {
             },
             {
                 title: '我的帐户',
-                iconCls: 'user'
+                iconCls: 'user',
+                html:'test'
             }
         ]
     }
