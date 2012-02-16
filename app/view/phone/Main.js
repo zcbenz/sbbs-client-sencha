@@ -26,6 +26,11 @@ Ext.define('Sbbs.view.phone.Main', {
                 title: '我的帐户',
                 iconCls: 'user',
                 html:'test'
+            },
+            {
+                title: '菜单',
+                iconCls: 'more',
+                html:'test'
             }
         ]
     }
