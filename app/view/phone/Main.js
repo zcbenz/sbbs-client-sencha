@@ -23,13 +23,13 @@ Ext.define('Sbbs.view.phone.Main', {
                 xtype: 'favorites'
             },
             {
-                title: '我的帐户',
-                iconCls: 'user',
-                html:'test'
+                title: '搜索',
+                iconCls: 'search',
+                xtype: 'search'
             },
             {
-                title: '菜单',
-                iconCls: 'more',
+                title: '我的帐户',
+                iconCls: 'user',
                 html:'test'
             }
         ]
