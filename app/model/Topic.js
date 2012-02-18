@@ -9,7 +9,8 @@ Ext.define('Sbbs.model.Topic', {
             { name: 'time'    , type: 'int'    } ,
             { name: 'id'      , type: 'int'    } ,
             { name: 'read'    , type: 'int'    } ,
-            { name: 'replies' , type: 'int'    }
+            { name: 'replies' , type: 'int'    } ,
+            { name: 'section' , type: 'int'    }
         ]
     }
 });
