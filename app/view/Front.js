@@ -32,9 +32,9 @@ Ext.define('Sbbs.view.Front', {
 
                 // mannualy change group header to Chinese
                 listeners: {
-                    painted: function() {
-                        if (this.hasShowed) return;
-                        this.hasShowed = true;
+                    refresh: function() {
+                        if (this.hasBeenPainted) return;
+                        this.hasBeenPainted = true;
                         var headers = Ext.query('#front-sectionhots .x-list-header');
                         var arr = ['本站系统', '东南大学', '电脑技术', '学术科学', '艺术文化', '乡情校谊', '休闲娱乐', '知性感性', '人文信息', '体坛风暴', '校务信箱', '社团群体'];
                         for (i in headers) {

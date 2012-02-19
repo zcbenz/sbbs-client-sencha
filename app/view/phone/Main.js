@@ -1,36 +1,48 @@
 Ext.define('Sbbs.view.phone.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Container',
 
     config: {
         fullscreen: true,
-        activeTab: 0,
-        tabBarPosition: 'bottom',
 
+        layout: 'vbox',
         items: [
             {
-                title: '首页',
-                iconCls: 'home',
-                xtype: 'front'
+                flex: 1,
+                navigationBar: null,
+                xtype: 'navigationview',
+                items: [
+                    { xtype: 'front' },
+                    { xtype: 'topten' },
+                    { xtype: 'favorites' },
+                    { xtype: 'search' },
+                ]
             },
             {
-                title: '十大',
-                iconCls: 'favorites',
-                xtype: 'topten'
-            },
-            {
-                title: '收藏夹',
-                iconCls: 'bookmarks',
-                xtype: 'favorites'
-            },
-            {
-                title: '搜索',
-                iconCls: 'search',
-                xtype: 'search'
-            },
-            {
-                title: '我的帐户',
-                iconCls: 'user',
-                html:'test'
+                xtype: 'tabbar',
+                docked: 'bottom',
+                activeTab: 0, 
+                items: [
+                    {
+                        title: '首页',
+                        iconCls: 'home'
+                    },
+                    {
+                        title: '十大',
+                        iconCls: 'favorites'
+                    },
+                    {
+                        title: '收藏夹',
+                        iconCls: 'bookmarks'
+                    },
+                    {
+                        title: '搜索',
+                        iconCls: 'search'
+                    },
+                    {
+                        title: '我的帐户',
+                        iconCls: 'user'
+                    }
+                ]
             }
         ]
     }
