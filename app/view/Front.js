@@ -1,7 +1,7 @@
 Ext.define('Sbbs.view.Front', {
     extend: 'Ext.Container',
     alias: 'widget.front',
-    requires: ['Ext.TitleBar', 'Sbbs.store.SectionHots'],
+    requires: ['Ext.List', 'Ext.TitleBar', 'Sbbs.store.SectionHots'],
 
     config: {
         layout: 'vbox',

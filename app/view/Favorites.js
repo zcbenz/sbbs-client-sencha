@@ -1,6 +1,7 @@
 Ext.define('Sbbs.view.Favorites', {
     extend: 'Ext.Container',
     alias: 'widget.favorites',
+    requires: ['Ext.dataview.NestedList', 'Sbbs.store.Favorites'],
 
     config: {
         layout: 'vbox',

@@ -1,6 +1,7 @@
 Ext.define('Sbbs.view.Search', {
     extend: 'Ext.Container',
     alias: 'widget.search',
+    requires: ['Ext.TitleBar', 'Ext.form.FieldSet'],
 
     config: {
         layout: 'vbox',

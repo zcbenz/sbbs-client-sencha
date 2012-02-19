@@ -19,6 +19,7 @@ Ext.define('Sbbs.store.SectionHots', {
                 type: 'json',
                 rootProperty: 'topics'
             }
-        }
+        },
+        autoLoad: false
     }
 });

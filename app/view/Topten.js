@@ -1,6 +1,7 @@
 Ext.define('Sbbs.view.Topten', {
     extend: 'Ext.Container',
     alias: 'widget.topten',
+    requires: ['Ext.TitleBar', 'Sbbs.store.Topten'],
 
     config: {
         layout: 'vbox',
