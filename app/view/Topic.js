@@ -7,13 +7,6 @@ Ext.define('Sbbs.view.Topic', {
 
         items: [
             {
-                docked: 'top',
-                xtype: 'titlebar',
-                title: '话题',
-
-                items: [ ]
-            },
-            {
                 flex: 1,
                 xtype: 'list',
                 id: 'front-sectionhots',

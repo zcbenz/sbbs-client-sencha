@@ -1,5 +1,6 @@
 Ext.define('Sbbs.view.phone.Main', {
     extend: 'Ext.tab.Panel',
+    requires: ['Sbbs.view.ReadWrap'],
 
     config: {
         fullscreen: true,
@@ -10,7 +11,10 @@ Ext.define('Sbbs.view.phone.Main', {
 
         items: [
             {
-                xtype: 'front',
+                xtype: 'readwrap',
+                items: [
+                    { xtype: 'front' }
+                ],
                 title: '首页',
                 iconCls: 'home'
             },
