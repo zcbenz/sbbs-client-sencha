@@ -1,13 +1,17 @@
 Ext.define('Sbbs.view.Front', {
     extend: 'Ext.Container',
     alias: 'widget.front',
-    requires: ['Ext.List', 'Ext.TitleBar', 'Sbbs.store.SectionHots'],
+    requires: ['Ext.List', 'Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.SectionHots'],
 
     config: {
-        title: '虎踞龙蟠BBS',
         layout: 'vbox',
 
         items: [
+            {
+                docked: 'top',
+                xtype: 'titlebar',
+                title: '虎踞龙蟠BBS'
+            },
             {
                 flex: 1,
                 id: 'front-sectionhots',

@@ -12,24 +12,25 @@ Ext.define('Sbbs.view.phone.Main', {
         items: [
             {
                 xtype: 'readwrap',
-                items: [
-                    { xtype: 'front' }
-                ],
+                items: [ { xtype: 'front' } ],
                 title: '首页',
                 iconCls: 'home'
             },
             {
-                xtype: 'topten',
+                xtype: 'readwrap',
+                items: [ { xtype: 'topten' } ],
                 title: '十大',
                 iconCls: 'favorites'
             },
             {
-                xtype: 'favorites',
+                xtype: 'readwrap',
+                items: [ { xtype: 'favorites' } ],
                 title: '收藏夹',
                 iconCls: 'bookmarks'
             },
             {
-                xtype: 'search',
+                xtype: 'readwrap',
+                items: [ { xtype: 'search' } ],
                 title: '搜索',
                 iconCls: 'search'
             },

@@ -10,7 +10,7 @@ Ext.application({
     },
 
     views: ['ReadWrap', 'Front', 'Search', 'Topten', 'Favorites', 'Topic'],
-    controllers: ['Front', 'Topten', 'Favorites'],
+    controllers: ['ReadWrap', 'Front', 'Topten', 'Favorites'],
     models: ['Section', 'Board', 'Topic'],
     stores: ['Sections', 'Topten', 'Favorites', 'Topics', 'SectionHots'],
     profiles: ['Tablet', 'Phone']

@@ -4,6 +4,9 @@ Ext.define('Sbbs.view.ReadWrap', {
     requires: ['Sbbs.view.Topic'],
 
     config: {
+        navigationBar: {
+            hidden: true
+        },
 
         items: [
             { xtype: 'topic' }
