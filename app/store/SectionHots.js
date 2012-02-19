@@ -1,5 +1,6 @@
 Ext.define('Sbbs.store.SectionHots', {
     extend: 'Ext.data.Store',
+    requires: ['Sbbs.model.Topic'],
 
     config: {
         model: 'Sbbs.model.Topic',
@@ -18,9 +19,6 @@ Ext.define('Sbbs.store.SectionHots', {
                 type: 'json',
                 rootProperty: 'topics'
             }
-        },
-        autoLoad: true
+        }
     }
 });
-
-
