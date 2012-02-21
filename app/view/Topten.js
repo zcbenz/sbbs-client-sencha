@@ -13,9 +13,11 @@ Ext.define('Sbbs.view.Topten', {
                 title: '十大话题'
             },
             {
+                flex: 1,
+
                 id: 'topten-list',
                 xtype: 'list',
-                flex: 1,
+
                 loadingText: '载入中...',
                 emptyText: '无法获取十大话题',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],

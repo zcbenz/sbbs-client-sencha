@@ -7,9 +7,22 @@ Ext.define('Sbbs.view.Topic', {
 
         items: [
             {
+                docked: 'top',
+                xtype: 'titlebar',
+                title: '话题',
+
+                items: [
+                    {
+                        id: 'topic-back',
+                        text: '后退'
+                    }
+                ]
+            },
+            {
                 flex: 1,
+
                 xtype: 'list',
-                id: 'front-sectionhots',
+
                 loadingText: '载入中...',
                 emptyText: '无法获取话题',
 

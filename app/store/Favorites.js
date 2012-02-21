@@ -1,5 +1,6 @@
 Ext.define('Sbbs.store.Favorites', {
     extend: 'Ext.data.TreeStore',
+    requires: ['Sbbs.model.Board'],
 
     config: {
         model: 'Sbbs.model.Board',

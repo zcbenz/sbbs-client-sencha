@@ -14,8 +14,10 @@ Ext.define('Sbbs.view.Front', {
             },
             {
                 flex: 1,
-                id: 'front-sectionhots',
+
+                id: 'front-list',
                 xtype: 'list',
+
                 loadingText: '载入中...',
                 emptyText: '无法获取分区热点',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],

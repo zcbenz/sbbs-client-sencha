@@ -6,10 +6,6 @@ Ext.define('Sbbs.view.ReadWrap', {
     config: {
         navigationBar: {
             hidden: true
-        },
-
-        items: [
-            { xtype: 'topic' }
-        ]
+        }
     }
 });
