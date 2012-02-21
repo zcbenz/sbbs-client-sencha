@@ -11,6 +11,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
             },
             '#topten-list': {
                 select: 'onReadTopic'
+            },
+            '#topic-back': {
+                tap: 'onTopicBack'
             }
         }
     },
@@ -18,15 +21,11 @@ Ext.define('Sbbs.controller.ReadWrap', {
     onReadTopic: function (list, record) {
         // FIXME
         // force create new Viewer view here due to Sencha's bug
-        if (this.viewer) {
-            this.viewer.destroy();
+        if (!this.viewer) {
+            this.viewer = Ext.create('Sbbs.view.Viewer');
         }
-        this.viewer = Ext.create('Sbbs.view.Viewer');
-        this.viewer.down("#topic-back").on({
-            scope: this,
-            tap: this.onTopicBack
-        });
 
+        // show Topic
         this.viewer.setTopic(record);
         this.getTabpanel().getActiveItem().push(this.viewer);
 

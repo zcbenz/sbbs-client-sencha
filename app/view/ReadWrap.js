@@ -4,6 +4,8 @@ Ext.define('Sbbs.view.ReadWrap', {
     requires: ['Sbbs.view.Topic'],
 
     config: {
+        autoDestroy: false,
+
         navigationBar: {
             hidden: true
         }

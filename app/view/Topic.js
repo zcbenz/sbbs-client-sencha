@@ -28,6 +28,7 @@ Ext.define('Sbbs.view.Topic', {
             {
                 flex: 1,
 
+                id: 'topic-list',
                 xtype: 'list',
 
                 loadingText: '载入中...',
@@ -54,7 +55,6 @@ Ext.define('Sbbs.view.Topic', {
         proxy.setExtraParam('token', config.token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
-        store.setTotalCount(record.get('replies') + 1);
         store.load();
     }
 });

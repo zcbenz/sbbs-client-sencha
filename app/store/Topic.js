@@ -3,6 +3,7 @@ Ext.define('Sbbs.store.Topic', {
 
     config: {
         model: 'Sbbs.model.Topic',
+        pageSize: 10,
 
         proxy: {
             type: 'ajax',
