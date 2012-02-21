@@ -1,17 +1,9 @@
 Ext.application({
     name: 'Sbbs',
 
-    launch: function() {
-        var store = Ext.create('Sbbs.store.Topics', {
-            board: 'Test',
-            postId: 123
-        });
-        store.load();
-    },
-
     views: ['ReadWrap', 'Front', 'Search', 'Topten', 'Favorites', 'Topic', 'Board', 'Viewer'],
     controllers: ['ReadWrap', 'Front', 'Topten', 'Favorites'],
     models: ['Section', 'Board', 'Topic'],
-    stores: ['Sections', 'Topten', 'Favorites', 'Topics', 'SectionHots'],
+    stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
     profiles: ['Tablet', 'Phone']
 });

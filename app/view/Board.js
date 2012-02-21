@@ -14,6 +14,7 @@ Ext.define('Sbbs.view.Board', {
                 items: [
                     {
                         id: 'topic-back',
+                        cls: 'x-button-back',
                         text: '后退'
                     }
                 ]

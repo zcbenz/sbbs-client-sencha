@@ -1,7 +1,7 @@
 var config = {
     // API Settings
-    api_token: '',
-    api_base: 'http://127.0.0.1/napi',
+    api_token: 'Zm9vbA==:==wdlloHYLkEW0n2ltyx5QKO',
+    api_base: 'http://bbs.seu.edu.cn/napi',
 
     set_api_token: function (token) {
         config.api_token = token;

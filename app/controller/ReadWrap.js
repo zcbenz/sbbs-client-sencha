@@ -17,17 +17,21 @@ Ext.define('Sbbs.controller.ReadWrap', {
 
     onReadTopic: function (list, record) {
         // FIXME
-        // force create new Topic view here due to Sencha's bug
-        if (this.topic) {
-            this.topic.destroy();
+        // force create new Viewer view here due to Sencha's bug
+        if (this.viewer) {
+            this.viewer.destroy();
         }
-        this.topic = Ext.create('Sbbs.view.Topic');
-        this.topic.down("#topic-back").on({
+        this.viewer = Ext.create('Sbbs.view.Viewer');
+        this.viewer.down("#topic-back").on({
             scope: this,
             tap: this.onTopicBack
         });
 
-        this.getTabpanel().getActiveItem().push(this.topic);
+        this.viewer.setTopic(record);
+        this.getTabpanel().getActiveItem().push(this.viewer);
+
+        // clean list's selection
+        list.deselectAll();
     },
 
     onTopicBack: function () {
