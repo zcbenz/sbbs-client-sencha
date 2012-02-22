@@ -20,22 +20,29 @@ Ext.define('Sbbs.view.Viewer', {
 
         this.board = this.getItems().items[0];
         this.topic = this.getItems().items[1];
-        this.board.on({
-            tap: this.setBoard,
-            scope: this
-        });
     },
 
-    setBoard: function (board) {
+    setBoard: function (record) {
         this.launch();
 
         this.board.show();
         this.topic.hide();
+        this.board.setBoard(record);
+    },
+
+    setBoardFromTopic: function (record) {
+        this.launch();
+
+        this.board.show();
+        this.topic.hide();
+        this.board.setBoardFromTopic(record);
     },
 
     setTopic: function (record) {
         this.launch();
 
+        this.board.hide();
+        this.topic.show();
         this.topic.setTopic(record);
     }
 });

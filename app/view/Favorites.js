@@ -9,13 +9,14 @@ Ext.define('Sbbs.view.Favorites', {
 
         items: [
             {
+                flex: 1,
+
                 id: 'fav-list',
                 xtype: 'nestedlist',
-                flex: 1,
+
                 title: '收藏夹',
                 loadingText: '载入中...',
                 displayField: 'description',
-                emptyText: '收藏夹显示错误',
 
                 toolbar: {
                     docked: 'top',

@@ -12,33 +12,57 @@ Ext.define('Sbbs.controller.ReadWrap', {
             '#topten-list': {
                 select: 'onReadTopic'
             },
+            '#fav-list': {
+                leafitemtap: 'onReadBoard'
+            },
             '#topic-back': {
-                tap: 'onTopicBack'
+                tap: 'onBack'
+            },
+            '#board-back': {
+                tap: 'onBack'
+            },
+            '#topic-board': {
+                tap: 'onTopicToBoard'
             }
         }
     },
 
-    onReadTopic: function (list, record) {
-        // FIXME
-        // force create new Viewer view here due to Sencha's bug
+    launch: function () {
         if (!this.viewer) {
             this.viewer = Ext.create('Sbbs.view.Viewer');
         }
+    },
+
+    onReadTopic: function (list, record) {
+        this.launch();
 
         // show Topic
         this.viewer.setTopic(record);
+        this.viewer.topicRecord = record;
         this.getTabpanel().getActiveItem().push(this.viewer);
 
         // clean list's selection
         list.deselectAll();
     },
 
-    onTopicBack: function () {
-        this.getTabpanel().getActiveItem().pop();
+    onReadBoard: function (nestedlist, list, index, target, record) {
+        this.launch();
+
+        // show board
+        this.viewer.setBoard(record);
+        this.viewer.boardRecord = record;
+        this.getTabpanel().getActiveItem().push(this.viewer);
+        list.deselectAll();
     },
 
-    // Return element on the current active tab
-    getElement: function (xtype) {
-        return this.getTabpanel().getActiveItem().down(xtype);
+    onTopicToBoard: function () {
+        this.launch();
+
+        var record = this.viewer.topicRecord;
+        this.viewer.setBoardFromTopic(record);
+    },
+
+    onBack: function () {
+        this.getTabpanel().getActiveItem().pop();
     }
 });

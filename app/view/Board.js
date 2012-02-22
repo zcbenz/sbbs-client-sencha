@@ -13,9 +13,9 @@ Ext.define('Sbbs.view.Board', {
 
                 items: [
                     {
-                        id: 'topic-back',
+                        id: 'board-back',
                         cls: 'x-button-back',
-                        text: '后退'
+                        text: '返回'
                     }
                 ]
             },
@@ -25,11 +25,18 @@ Ext.define('Sbbs.view.Board', {
                 xtype: 'list',
 
                 loadingText: '载入中...',
-                emptyText: '无法获取版面信息',
 
                 itemTpl: '{title}'
             }
         ]
+    },
+
+    setBoard: function (record) {
+        this.down('titlebar').setTitle(record.get('name'));
+    },
+
+    setBoardFromTopic: function (record) {
+        this.down('titlebar').setTitle(record.get('board'));
     }
 });
 

@@ -16,7 +16,7 @@ Ext.define('Sbbs.view.Topic', {
                     {
                         id: 'topic-back',
                         cls: 'x-button-back',
-                        text: '后退'
+                        text: '返回'
                     },
                     {
                         id: 'topic-board',
@@ -31,8 +31,8 @@ Ext.define('Sbbs.view.Topic', {
                 id: 'topic-list',
                 xtype: 'list',
 
+                disableSelection: true,
                 loadingText: '载入中...',
-                emptyText: '无法获取话题',
                 plugins: [
                     {
                         xclass: 'Sbbs.plugin.ListPaging',
@@ -41,21 +41,20 @@ Ext.define('Sbbs.view.Topic', {
                 ],
 
                 store: Ext.create('Sbbs.store.Topic'),
-                itemTpl: '{title}'
+                itemTpl: '{content}'
             }
         ]
     },
 
     setTopic: function (record) {
         this.down('titlebar').setTitle(record.get('title'));
-        this.down('#topic-board').setText(record.get('board'));
 
         var store = this.down('list').getStore();
         var proxy = store.getProxy();
         proxy.setExtraParam('token', config.token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
+        store.removeAll();
         store.loadPage(1); // use loadPage instead of load to reset page
     }
 });
-
