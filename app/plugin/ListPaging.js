@@ -62,7 +62,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
                  '<span class="{cssPrefix}loading-bottom"></span>',
                  '<span class="{cssPrefix}loading-left"></span>',
             '</div>',
-            '<div class="{cssPrefix}list-paging-msg">{message}</div>'
+            '<div id="loadMoreMessage" class="{cssPrefix}list-paging-msg">{message}</div>'
         ].join(''),
 
         /**
@@ -233,7 +233,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
     /**
      * @private
      */
-    onStoreLoad: function(store) {
+    onStoreLoad: function(store, records) {
         var loadCmp  = this.addLoadMoreCmp(),
             template = this.getLoadTpl(),
             message  = this.storeFullyLoaded() ? this.getNoMoreRecordsText() : this.getLoadMoreText();
@@ -278,12 +278,9 @@ Ext.define('Sbbs.plugin.ListPaging', {
      * @return {Boolean}
      */
     storeFullyLoaded: function() {
-        if (this.fullyLoaded)
-            return true;
-
         var store = this.getList().getStore();
 
-        return store.getCount() < store.getPageSize();
+        return this.fullyLoaded || store.getCount() < store.getPageSize();
     },
 
     /**
@@ -302,8 +299,13 @@ Ext.define('Sbbs.plugin.ListPaging', {
             scope: this,
             addRecords: true,
             callback: function (records) {
-                if (records.length < this.getList().getStore().getCount())
+                if (records.length < this.getList().getStore().getPageSize()) {
                     this.fullyLoaded = true;
+
+                    var text = document.getElementById('loadMoreMessage');
+                    if (text.innerText == this.getLoadMoreText())
+                        text.innerText = this.getNoMoreRecordsText();
+                }
             }
         });
     }

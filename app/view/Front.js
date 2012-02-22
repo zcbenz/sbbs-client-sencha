@@ -19,7 +19,6 @@ Ext.define('Sbbs.view.Front', {
                 xtype: 'list',
 
                 loadingText: '载入中...',
-                emptyText: '无法获取分区热点',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
                 store: Ext.create('Sbbs.store.SectionHots'),

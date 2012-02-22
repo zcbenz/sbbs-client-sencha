@@ -34,7 +34,8 @@ var config = {
                 '{title}',
             '</div>',
             '<div class="info">',
-                '<span class="author">{author} {[timestamp2date(values.time)]}</span>',
+                '<span class="author">{author}</span> 在 ',
+                '<span class="time">{[timestamp2date(values.time)]}</span>',
                 '<tpl if="replies">',
                 '<span class="visits">{replies} / {read+0}</span>',
                 '<tpl else>',
@@ -64,5 +65,5 @@ function timestamp2date(time) {
     if (now.getDay() == date.getDay() && now.getMonth() == date.getMonth() && now.getFullYear() == date.getFullYear())
         return date.getHours() + ':' + date.getMinutes();
     else
-        return date.getMonth() + '月' + date.getDay() + '日, ' + date.getHours() + ':' + date.getMinutes();
+        return (date.getMonth() + 1) + '月' + date.getDay() + '日, ' + date.getHours() + ':' + date.getMinutes();
 }

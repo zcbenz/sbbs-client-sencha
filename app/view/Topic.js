@@ -51,7 +51,7 @@ Ext.define('Sbbs.view.Topic', {
 
         var store = this.down('list').getStore();
         var proxy = store.getProxy();
-        proxy.setExtraParam('token', config.token);
+        proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
         store.removeAll();

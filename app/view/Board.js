@@ -53,7 +53,7 @@ Ext.define('Sbbs.view.Board', {
     loadFromStore: function (name) {
         var store = this.down('list').getStore();
         var proxy = store.getProxy();
-        proxy.setExtraParam('token', config.token);
+        proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('name', name);
         store.removeAll();
         store.loadPage(1); // use loadPage instead of load to reset page

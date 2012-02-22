@@ -19,6 +19,10 @@
     color: #AAA;
 }
 
+.topic-list-item .author {
+    color: #888;
+}
+
 .topic-list-item .visits {
     float: right;
 }

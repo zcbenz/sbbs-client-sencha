@@ -7,6 +7,7 @@ Ext.define('Sbbs.model.Topic', {
             { name: 'author'  , type: 'string' } ,
             { name: 'board'   , type: 'string' } ,
             { name: 'content' , type: 'string' } ,
+            { name: 'unread'  , type: 'boolean'} ,
             { name: 'time'    , type: 'int'    } ,
             { name: 'size'    , type: 'int'    } ,
             { name: 'id'      , type: 'int'    } ,
