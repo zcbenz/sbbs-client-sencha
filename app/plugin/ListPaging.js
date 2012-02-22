@@ -235,6 +235,10 @@ Ext.define('Sbbs.plugin.ListPaging', {
      */
     onStoreLoad: function(store, records) {
         this.fullyLoaded = false;
+        var text = document.getElementById('loadMoreMessage');
+        if (text && text.innerText == this.getNoMoreRecordsText())
+            text.innerText = this.getLoadMoreText();
+
         var loadCmp  = this.addLoadMoreCmp(),
             template = this.getLoadTpl(),
             message  = this.storeFullyLoaded() ? this.getNoMoreRecordsText() : this.getLoadMoreText();
