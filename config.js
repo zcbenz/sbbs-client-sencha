@@ -92,6 +92,5 @@ function time_padding_2(time) {
 }
 
 function topic_content_parse(str) {
-    str.replace('\n', '<br/>');
-    return str;
+    return str.replace(/\n/g, '<br />');
 }
