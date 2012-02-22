@@ -55,7 +55,7 @@ Ext.define('Sbbs.view.Topic', {
         proxy.setExtraParam('token', config.token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
-        store.load();
+        store.loadPage(1); // use loadPage instead of load to reset page
     }
 });
 
