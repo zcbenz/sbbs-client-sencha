@@ -234,10 +234,9 @@ Ext.define('Sbbs.plugin.ListPaging', {
      * @private
      */
     onStoreLoad: function(store, records) {
-        this.fullyLoaded = false;
-        var text = document.getElementById('loadMoreMessage');
-        if (text && text.innerText == this.getNoMoreRecordsText())
-            text.innerText = this.getLoadMoreText();
+//        var text = document.getElementById('loadMoreMessage');
+//        if (text && text.innerText == this.getNoMoreRecordsText())
+//            text.innerText = this.getLoadMoreText();
 
         var loadCmp  = this.addLoadMoreCmp(),
             template = this.getLoadTpl(),
@@ -308,8 +307,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
                     this.fullyLoaded = true;
 
                     var text = document.getElementById('loadMoreMessage');
-                    if (text.innerText == this.getLoadMoreText())
-                        text.innerText = this.getNoMoreRecordsText();
+                    text.innerText = this.getNoMoreRecordsText();
                 }
             }
         });
