@@ -41,7 +41,7 @@ Ext.define('Sbbs.view.Topic', {
                 ],
 
                 store: Ext.create('Sbbs.store.Topic'),
-                itemTpl: '{content}'
+                itemTpl: config.topicContentTpl
             }
         ]
     },

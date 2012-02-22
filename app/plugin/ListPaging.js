@@ -234,6 +234,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
      * @private
      */
     onStoreLoad: function(store, records) {
+        this.fullyLoaded = false;
         var loadCmp  = this.addLoadMoreCmp(),
             template = this.getLoadTpl(),
             message  = this.storeFullyLoaded() ? this.getNoMoreRecordsText() : this.getLoadMoreText();
@@ -280,7 +281,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
     storeFullyLoaded: function() {
         var store = this.getList().getStore();
 
-        return this.fullyLoaded || store.getCount() < store.getPageSize();
+        return !!this.fullyLoaded || store.getCount() < store.getPageSize();
     },
 
     /**

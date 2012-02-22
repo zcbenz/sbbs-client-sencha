@@ -1,7 +1,7 @@
 Ext.define('Sbbs.view.Front', {
     extend: 'Ext.Container',
     alias: 'widget.front',
-    requires: ['Ext.List', 'Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.SectionHots'],
+    requires: ['Ext.List', 'Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.plugin.FrontList', 'Sbbs.store.SectionHots'],
 
     config: {
         layout: 'vbox',
@@ -16,7 +16,7 @@ Ext.define('Sbbs.view.Front', {
                 flex: 1,
 
                 id: 'front-list',
-                xtype: 'list',
+                xtype: 'frontlist',
 
                 loadingText: '载入中...',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],

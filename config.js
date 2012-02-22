@@ -45,6 +45,18 @@ var config = {
         '</div>'
     ].join(''),
 
+    topicContentTpl: [
+        '<div class="topic-content-item">',
+            '<div class="info">',
+                '<span class="author">{author}</span>',
+                '<span class="time">{[timestamp2date(values.time)]}</span>',
+            '</div>',
+            '<div class="content">',
+                '{[topic_content_parse(values.content)]}',
+            '</div>',
+        '</div>'
+    ].join(''),
+
     // API Settings
     api_token: 'Zm9vbA==:==wdlloHYLkEW0n2ltyx5QKO',
     api_base: 'http://bbs.seu.edu.cn/napi',
@@ -61,9 +73,25 @@ if ('api_token' in localStorage) {
 
 function timestamp2date(time) {
     var date = new Date(time * 1000);
+    var hour = time_padding_2(date.getHours());
+    var minute = time_padding_2(date.getMinutes());
+
     var now = new Date();
+
     if (now.getDay() == date.getDay() && now.getMonth() == date.getMonth() && now.getFullYear() == date.getFullYear())
-        return date.getHours() + ':' + date.getMinutes();
+        return hour + ':' + minute;
     else
-        return (date.getMonth() + 1) + '月' + date.getDay() + '日, ' + date.getHours() + ':' + date.getMinutes();
+        return (date.getMonth() + 1) + '月' + date.getDay() + '日, ' + hour + ':' + minute;
+}
+
+function time_padding_2(time) {
+    if (time.length < 2)
+        return '0' + time;
+    else
+        return time;
+}
+
+function topic_content_parse(str) {
+    str.replace('\n', '<br/>');
+    return str;
 }
