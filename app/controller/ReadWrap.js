@@ -3,9 +3,14 @@ Ext.define('Sbbs.controller.ReadWrap', {
 
     config: {
         refs: {
-            tabpanel: 'tabpanel'
+            tabpanel: 'tabpanel',
+            backButton1: '#topic-back',
+            backButton2: '#board-back'
         },
         control: {
+            '#board-list': {
+                select: 'onReadTopic'
+            },
             '#front-list': {
                 select: 'onReadTopic'
             },
@@ -28,9 +33,17 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     launch: function () {
+        // create viewer lazily
         if (!this.viewer) {
             this.viewer = Ext.create('Sbbs.view.Viewer');
         }
+
+        // and set the back text according ot current tab
+        var id = this.getTabpanel().getActiveItem().getItemId();
+        var index = id[id.length - 1] - 1;
+        var texts = ['首页', '十大', '收藏夹', '搜索'];
+        this.getBackButton1().setText(texts[index]);
+        this.getBackButton2().setText(texts[index]);
     },
 
     onReadTopic: function (list, record) {

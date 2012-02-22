@@ -281,13 +281,9 @@ Ext.define('Sbbs.plugin.ListPaging', {
         if (this.fullyLoaded)
             return true;
 
-        var store = this.getList().getStore(),
-            total = store.getTotalCount();
+        var store = this.getList().getStore();
 
-        if (total === null && store.getCount() < store.getPageSize())
-            return true;
-
-        return total !== null ? store.getTotalCount() <= (store.currentPage * store.getPageSize()) : false;
+        return store.getCount() < store.getPageSize();
     },
 
     /**
