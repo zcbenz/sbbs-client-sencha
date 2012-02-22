@@ -23,7 +23,7 @@ Ext.define('Sbbs.view.Topten', {
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
                 store: Ext.create('Sbbs.store.Topten'),
-                itemTpl: '<div>{title}</div>'
+                itemTpl: config.frontItemTpl
             }
         ]
     }

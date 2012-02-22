@@ -2,3 +2,27 @@
     padding-right: 3px;
     vertical-align: text-bottom;
 }
+
+.topic-list-item {
+    font-size: 14px;
+}
+
+.topic-list-item .title {
+    font-size: 16px;
+}
+
+.topic-list-item .unread.title {
+    color: green;
+}
+
+.topic-list-item .info {
+    color: #AAA;
+}
+
+.topic-list-item .visits {
+    float: right;
+}
+
+.topic-list-item.hot .visits {
+    color: red;
+}

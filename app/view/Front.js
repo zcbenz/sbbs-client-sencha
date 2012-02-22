@@ -23,7 +23,7 @@ Ext.define('Sbbs.view.Front', {
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
                 store: Ext.create('Sbbs.store.SectionHots'),
-                itemTpl: '{title}',
+                itemTpl: config.frontItemTpl,
                 grouped: true,
                 pinHeaders: false
             }
