@@ -234,13 +234,10 @@ Ext.define('Sbbs.plugin.ListPaging', {
      * @private
      */
     onStoreLoad: function(store, records) {
-//        var text = document.getElementById('loadMoreMessage');
-//        if (text && text.innerText == this.getNoMoreRecordsText())
-//            text.innerText = this.getLoadMoreText();
-
+        this.fullyLoaded = records.length < store.getPageSize();
         var loadCmp  = this.addLoadMoreCmp(),
             template = this.getLoadTpl(),
-            message  = this.storeFullyLoaded() ? this.getNoMoreRecordsText() : this.getLoadMoreText();
+            message  = this.fullyLoaded ? this.getNoMoreRecordsText() : this.getLoadMoreText();
 
         this.getLoadMoreCmp().show();
         this.setLoading(false);
@@ -301,15 +298,7 @@ Ext.define('Sbbs.plugin.ListPaging', {
 
         store.nextPage({
             scope: this,
-            addRecords: true,
-            callback: function (records) {
-                if (records.length < this.getList().getStore().getPageSize()) {
-                    this.fullyLoaded = true;
-
-                    var text = document.getElementById('loadMoreMessage');
-                    text.innerText = this.getNoMoreRecordsText();
-                }
-            }
+            addRecords: true
         });
     }
 });
