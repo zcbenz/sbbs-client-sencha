@@ -20,6 +20,6 @@ Ext.define('Sbbs.view.Favorites', {
     },
 
     getItemTextTpl: function() {
-        return '<span><tpl if="leaf !== true"><img src="resources/imgs/folder.png"/><tpl elseif="unread == 1"><img src="resources/imgs/unread.png"/><tpl else><img src="resources/imgs/favorite.png"/></tpl>{' + this.getDisplayField() + '}</span>';
+        return '<span><tpl if="leaf !== true"><img src="resources/images/folder.png"/><tpl elseif="unread == 1"><img src="resources/images/unread.png"/><tpl else><img src="resources/images/favorite.png"/></tpl>{' + this.getDisplayField() + '}</span>';
     }
 });
