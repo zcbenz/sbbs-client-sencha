@@ -46,4 +46,3 @@ Ext.define('Sbbs.view.Viewer', {
         this.topic.setTopic(record);
     }
 });
-

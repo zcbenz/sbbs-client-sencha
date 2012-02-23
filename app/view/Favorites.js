@@ -1,35 +1,25 @@
 Ext.define('Sbbs.view.Favorites', {
-    extend: 'Ext.Container',
+    extend: 'Ext.dataview.NestedList',
     alias: 'widget.favorites',
-    requires: ['Ext.dataview.NestedList', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.Favorites'],
+    requires: ['Sbbs.store.Favorites'],
 
     config: {
+        id: 'fav-list',
+
         title: '收藏夹',
-        layout: 'vbox',
+        loadingText: '载入中...',
+        displayField: 'description',
 
-        items: [
-            {
-                flex: 1,
+        toolbar: {
+            docked: 'top',
+            xtype: 'titlebar',
+            ui: 'dark'
+        },
 
-                id: 'fav-list',
-                xtype: 'nestedlist',
+        store: Ext.create('Sbbs.store.Favorites'),
+    },
 
-                title: '收藏夹',
-                loadingText: '载入中...',
-                displayField: 'description',
-
-                toolbar: {
-                    docked: 'top',
-                    xtype: 'titlebar',
-                    ui: 'dark'
-                },
-
-                getItemTextTpl: function() {
-                    return '<span><tpl if="leaf !== true"><img src="resources/imgs/folder.png"/><tpl elseif="unread == 1"><img src="resources/imgs/unread.png"/><tpl else><img src="resources/imgs/favorite.png"/></tpl>{' + this.getDisplayField() + '}</span>';
-                },
-
-                store: Ext.create('Sbbs.store.Favorites'),
-            }
-        ]
+    getItemTextTpl: function() {
+        return '<span><tpl if="leaf !== true"><img src="resources/imgs/folder.png"/><tpl elseif="unread == 1"><img src="resources/imgs/unread.png"/><tpl else><img src="resources/imgs/favorite.png"/></tpl>{' + this.getDisplayField() + '}</span>';
     }
 });

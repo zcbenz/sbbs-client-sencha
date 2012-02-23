@@ -51,12 +51,36 @@ Ext.define('Sbbs.view.Board', {
     },
 
     loadFromStore: function (name) {
-        var store = this.down('list').getStore();
+        // prevent refreshing same Board
+        if (this.name && this.name == name)
+            return;
+
+        this.name = name;
+        if (!this.list)
+            this.list = this.down('list');
+
+        // refresh view
+        this.down('titlebar').setTitle(name);
+        this.list.setMasked({
+            xtype: 'loadmask',
+            message: '载入中...'
+        });
+
+        // clear previous content
+        var store = this.list.getStore();
         var proxy = store.getProxy();
+        store.removeAll();
+
+        // set and grab
         proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('name', name);
-        store.removeAll();
-        store.loadPage(1); // use loadPage instead of load to reset page
+        // use loadPage instead of load to reset page
+        store.loadPage(1, {
+            scope: this,
+            callback: function() {
+                this.list.unmask();
+            }
+        });
     }
 });
 

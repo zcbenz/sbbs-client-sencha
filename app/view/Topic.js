@@ -47,14 +47,36 @@ Ext.define('Sbbs.view.Topic', {
     },
 
     setTopic: function (record) {
-        this.down('titlebar').setTitle(record.get('title'));
+        // prevent refreshing same Topic
+        if (this.record && this.record == record)
+            return;
 
-        var store = this.down('list').getStore();
+        this.record = record;
+        if (!this.list)
+            this.list = this.down('list');
+
+        // refresh view
+        this.down('titlebar').setTitle(record.get('title'));
+        this.list.setMasked({
+            xtype: 'loadmask',
+            message: '载入中...'
+        });
+
+        // clear previous content
+        var store = this.list.getStore();
         var proxy = store.getProxy();
+        store.removeAll();
+
+        // set and grab
         proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
-        store.removeAll();
-        store.loadPage(1); // use loadPage instead of load to reset page
+        // use loadPage instead of load to reset page
+        store.loadPage(1, {
+            scope: this,
+            callback: function() {
+                this.list.unmask();
+            }
+        });
     }
 });

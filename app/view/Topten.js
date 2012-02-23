@@ -19,7 +19,6 @@ Ext.define('Sbbs.view.Topten', {
                 xtype: 'list',
 
                 loadingText: '载入中...',
-                emptyText: '无法获取十大话题',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
                 store: Ext.create('Sbbs.store.Topten'),
