@@ -15,6 +15,10 @@
     color: green;
 }
 
+.topic-list-item .top.title {
+    color: blue;
+}
+
 .topic-list-item .info {
     color: #AAA;
 }

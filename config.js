@@ -28,6 +28,8 @@ var config = {
         '</tpl>',
             '<tpl if="unread === true">',
             '<div class="unread title">',
+            '<tpl elseif="top === true">',
+            '<div class="top title">',
             '<tpl else>',
             '<div class="title">',
             '</tpl>',

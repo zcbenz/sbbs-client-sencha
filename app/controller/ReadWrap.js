@@ -1,5 +1,6 @@
 Ext.define('Sbbs.controller.ReadWrap', {
     extend: 'Ext.app.Controller',
+    requires: ['Ext.ActionSheet'],
 
     config: {
         refs: {
@@ -16,6 +17,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
             },
             '#topten-list': {
                 select: 'onReadTopic'
+            },
+            '#topic-list': {
+                itemtap: 'onDoTopic'
             },
             '#fav-list': {
                 leafitemtap: 'onReadBoard'
@@ -68,14 +72,56 @@ Ext.define('Sbbs.controller.ReadWrap', {
         list.deselectAll();
     },
 
-    onTopicToBoard: function () {
+    onTopicToBoard: function() {
         this.launch();
 
         var record = this.viewer.topicRecord;
         this.viewer.setBoardFromTopic(record);
     },
 
-    onBack: function () {
+    onBack: function() {
         this.getTabpanel().getActiveItem().pop();
+    },
+
+    onDoTopic: function(list, index, target, record) {
+        if (!this.topicSheet) {
+            this.topicSheet = Ext.create('Ext.ActionSheet', {
+                modal: true,
+                items: [
+                    {
+                        text: '回复',
+                        ui: 'confirm',
+                        scope: this,
+                        handler: function() {
+                            this.onReply.call(this, this.topicSheet.getRecord());
+                        }
+                    },
+                    {
+                        text: '发站内信',
+                        scope: this,
+                        handler: function() {
+                            this.onSendMail.call(this, this.topicSheet.getRecord());
+                        }
+                    },
+                    {
+                        text: '取消',
+                        scope: this,
+                        handler: function() {
+                            this.topicSheet.hide();
+                        }
+                    }
+                ]
+            });
+            Ext.Viewport.add(this.topicSheet);
+        }
+
+        this.topicSheet.setRecord(record);
+        this.topicSheet.show();
+    },
+
+    onReply: function(record) {
+    },
+
+    onSendMail: function(record) {
     }
 });
