@@ -26,6 +26,7 @@ Ext.define('Sbbs.view.Board', {
                 id: 'board-list',
                 xtype: 'list',
 
+                disableSelection: true,
                 loadingText: '载入中...',
                 plugins: [
                     {

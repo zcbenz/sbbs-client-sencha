@@ -7,6 +7,7 @@ Ext.define('Sbbs.view.Favorites', {
         id: 'fav-list',
 
         title: '收藏夹',
+        disableSelection: true,
         loadingText: '载入中...',
         displayField: 'description',
 

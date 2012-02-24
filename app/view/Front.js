@@ -18,6 +18,7 @@ Ext.define('Sbbs.view.Front', {
                 id: 'front-list',
                 xtype: 'frontlist',
 
+                disableSelection: true,
                 loadingText: '载入中...',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 

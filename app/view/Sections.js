@@ -7,6 +7,7 @@ Ext.define('Sbbs.view.Sections', {
         id: 'sections-list',
 
         title: '分区列表',
+        disableSelection: true,
         loadingText: '载入中...',
         displayField: 'description',
 

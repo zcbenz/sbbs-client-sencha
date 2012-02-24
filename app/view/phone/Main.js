@@ -1,6 +1,6 @@
 Ext.define('Sbbs.view.phone.Main', {
     extend: 'Ext.tab.Panel',
-    requires: ['Sbbs.view.ReadWrap'],
+    requires: ['Sbbs.view.ReadWrap', 'Sbbs.view.FrontWrap', 'Sbbs.view.Hots'],
 
     config: {
         fullscreen: true,
@@ -18,7 +18,7 @@ Ext.define('Sbbs.view.phone.Main', {
             },
             {
                 xtype: 'readwrap',
-                items: [ { xtype: 'topten' } ],
+                items: [ { xtype: 'hots' } ],
                 title: '十大',
                 iconCls: 'favorites'
             },

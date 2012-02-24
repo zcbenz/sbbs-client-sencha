@@ -10,16 +10,22 @@ Ext.define('Sbbs.controller.ReadWrap', {
         },
         control: {
             '#board-list': {
-                select: 'onReadTopic'
+                itemtap: 'onReadTopic'
             },
             '#front-list': {
-                select: 'onReadTopic'
+                itemtap: 'onReadTopic'
             },
             '#topten-list': {
-                select: 'onReadTopic'
+                itemtap: 'onReadTopic'
             },
             '#topic-list': {
                 itemtap: 'onDoTopic'
+            },
+            '#topboards-list': {
+                scope: this,
+                itemtap: function(list, index, target, record) {
+                    this.onReadBoard(list, list, index, target, record);
+                }
             },
             '#fav-list': {
                 leafitemtap: 'onReadBoard'
@@ -53,15 +59,13 @@ Ext.define('Sbbs.controller.ReadWrap', {
         this.getBackButton2().setText(texts[index]);
     },
 
-    onReadTopic: function (list, record) {
+    onReadTopic: function (list, index, target, record) {
         this.launch();
 
         // show Topic
         this.viewer.setTopic(record);
         this.viewer.topicRecord = record;
         this.getTabpanel().getActiveItem().push(this.viewer);
-
-        // clean list's selection
         list.deselectAll();
     },
 

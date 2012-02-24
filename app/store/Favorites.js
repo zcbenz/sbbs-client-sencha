@@ -12,7 +12,12 @@ Ext.define('Sbbs.store.Favorites', {
                 rootProperty: 'boards'
             }
         },
-        autoLoad: true
+        autoLoad: true,
+        listeners: {
+            beforeload: function(store) {
+                store.getProxy().setExtraParam('token', config.api_token);
+            }
+        }
     }
 });
 

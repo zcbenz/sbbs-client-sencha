@@ -6,8 +6,8 @@ Ext.application({
     icon: 'resources/images/icon.png',
     glossOnIcon: false,
 
-    views: ['Login', 'ReadWrap', 'FrontWrap',
-            'Front', 'Search', 'Topten', 'Favorites',
+    views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots',
+            'Front', 'Sections', 'Topboards', 'Search', 'Topten', 'Favorites',
             'Topic', 'Board', 'Viewer'],
     controllers: ['ReadWrap', 'Front', 'Topten', 'Favorites'],
     models: ['Section', 'Board', 'Topic'],

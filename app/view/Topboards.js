@@ -1,7 +1,7 @@
-Ext.define('Sbbs.view.Topten', {
+Ext.define('Sbbs.view.Topboards', {
     extend: 'Ext.Container',
-    alias: 'widget.topten',
-    requires: ['Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.Topten'],
+    xtype: 'topboards',
+    requires: ['Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.Topboards'],
 
     config: {
         layout: 'vbox',
@@ -10,20 +10,19 @@ Ext.define('Sbbs.view.Topten', {
             {
                 docked: 'top',
                 xtype: 'titlebar',
-                title: '十大话题'
+                title: '十大版面'
             },
             {
                 flex: 1,
 
-                id: 'topten-list',
+                id: 'topboards-list',
                 xtype: 'list',
 
-                disableSelection: true,
                 loadingText: '载入中...',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
-                store: Ext.create('Sbbs.store.Topten'),
-                itemTpl: config.frontItemTpl
+                store: Ext.create('Sbbs.store.Topboards'),
+                itemTpl: '{description}'
             }
         ]
     }
