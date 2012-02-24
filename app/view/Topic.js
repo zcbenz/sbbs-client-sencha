@@ -51,6 +51,9 @@ Ext.define('Sbbs.view.Topic', {
         if (this.record && this.record == record)
             return;
 
+        // mark as read
+        record.set('unread', false);
+
         this.record = record;
         if (!this.list)
             this.list = this.down('list');
