@@ -135,10 +135,17 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     onReply: function(record) {
-        Sbbs.app.showLogin();
+        if (!Sbbs.app.isLogin()) {
+            Sbbs.app.showLogin();
+            return;
+        }
     },
 
     onSendMail: function(record) {
+        if (!Sbbs.app.isLogin()) {
+            Sbbs.app.showLogin();
+            return;
+        }
     },
 
     onChangeMode: function() {
