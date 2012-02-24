@@ -87,12 +87,14 @@ Ext.define('Sbbs.controller.ReadWrap', {
         if (!this.topicSheet) {
             this.topicSheet = Ext.create('Ext.ActionSheet', {
                 modal: true,
+                hideOnMaskTap: true,
                 items: [
                     {
                         text: '回复',
                         ui: 'confirm',
                         scope: this,
                         handler: function() {
+                            this.topicSheet.hide();
                             this.onReply.call(this, this.topicSheet.getRecord());
                         }
                     },
@@ -100,6 +102,7 @@ Ext.define('Sbbs.controller.ReadWrap', {
                         text: '发站内信',
                         scope: this,
                         handler: function() {
+                            this.topicSheet.hide();
                             this.onSendMail.call(this, this.topicSheet.getRecord());
                         }
                     },
@@ -120,6 +123,7 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     onReply: function(record) {
+        Sbbs.app.showLogin();
     },
 
     onSendMail: function(record) {

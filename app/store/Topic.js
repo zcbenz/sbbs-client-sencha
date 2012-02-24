@@ -8,9 +8,6 @@ Ext.define('Sbbs.store.Topic', {
         proxy: {
             type: 'ajax',
             url: config.api_base + '/topic/get.json',
-            extraParams: {
-                token: config.token
-            },
             reader: {
                 type: 'json',
                 rootProperty: 'topics'

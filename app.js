@@ -6,9 +6,17 @@ Ext.application({
     icon: 'resources/images/icon.png',
     glossOnIcon: false,
 
-    views: ['ReadWrap', 'Front', 'Search', 'Topten', 'Favorites', 'Topic', 'Board', 'Viewer'],
+    views: ['Login', 'ReadWrap', 'Front', 'Search', 'Topten', 'Favorites', 'Topic', 'Board', 'Viewer'],
     controllers: ['ReadWrap', 'Front', 'Topten', 'Favorites'],
     models: ['Section', 'Board', 'Topic'],
     stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
-    profiles: ['Tablet', 'Phone']
+    profiles: ['Tablet', 'Phone'],
+
+    showLogin: function() {
+        if (!this.login) {
+            this.login = Ext.Viewport.add(Ext.create('Sbbs.view.Login'));
+        }
+
+        this.login.show();
+    }
 });
