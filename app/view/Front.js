@@ -10,7 +10,7 @@ Ext.define('Sbbs.view.Front', {
             {
                 docked: 'top',
                 xtype: 'titlebar',
-                title: '虎踞龙蟠BBS'
+                title: '虎踞龙蟠BBS',
             },
             {
                 flex: 1,

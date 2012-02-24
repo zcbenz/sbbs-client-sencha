@@ -24,6 +24,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
             '#fav-list': {
                 leafitemtap: 'onReadBoard'
             },
+            '#sections-list': {
+                leafitemtap: 'onReadBoard'
+            },
             '#topic-back': {
                 tap: 'onBack'
             },

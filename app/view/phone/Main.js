@@ -12,7 +12,7 @@ Ext.define('Sbbs.view.phone.Main', {
         items: [
             {
                 xtype: 'readwrap',
-                items: [ { xtype: 'front' } ],
+                items: [ { xtype: 'frontwrap' } ],
                 title: '首页',
                 iconCls: 'home'
             },

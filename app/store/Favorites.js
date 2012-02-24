@@ -7,9 +7,6 @@ Ext.define('Sbbs.store.Favorites', {
         proxy: {
             type: 'ajax',
             url: config.api_base + '/fav/list.json',
-            extraParams: {
-                token: config.api_token,
-            },
             reader: {
                 type: 'json',
                 rootProperty: 'boards'
