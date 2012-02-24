@@ -59,6 +59,13 @@ var config = {
         '</div>'
     ].join(''),
 
+    // Board mode
+    boardMode: 2,
+    setBoardMode: function(mode) {
+        config.boardMode = mode;
+        localStorage.boardMode = mode;
+    },
+
     // API Settings
     api_token: 'Zm9vbA==:==wdlloHYLkEW0n2ltyx5QKO',
     api_base: 'http://bbs.seu.edu.cn/napi',
@@ -71,6 +78,9 @@ var config = {
 
 if ('api_token' in localStorage) {
     config.api_token = localStorage.api_token;
+}
+if ('boardMode' in localStorage) {
+    config.boardMode = localStorage.boardMode;
 }
 
 function timestamp2date(time) {

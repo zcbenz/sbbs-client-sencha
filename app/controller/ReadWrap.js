@@ -5,6 +5,8 @@ Ext.define('Sbbs.controller.ReadWrap', {
     config: {
         refs: {
             tabpanel: 'tabpanel',
+            board: 'board',
+            topic: 'topic',
             backButton1: '#topic-back',
             backButton2: '#board-back'
         },
@@ -41,6 +43,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
             },
             '#topic-board': {
                 tap: 'onTopicToBoard'
+            },
+            '#board-change-mode': {
+                tap: 'onChangeMode'
             }
         }
     },
@@ -134,5 +139,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     onSendMail: function(record) {
+    },
+
+    onChangeMode: function() {
+        this.getBoard().onChangeMode();
     }
 });

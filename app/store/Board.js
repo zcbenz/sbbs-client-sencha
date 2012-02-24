@@ -13,7 +13,14 @@ Ext.define('Sbbs.store.Board', {
                 rootProperty: 'topics'
             }
         },
-        autoLoad: false
+        autoLoad: false,
+        listeners: {
+            beforeload: function(store) {
+                var map = [0, 1, 3];
+                var proxy = store.getProxy();
+                proxy.setExtraParam('token', config.api_token);
+                proxy.setExtraParam('mode', map[config.boardMode]);
+            }
+        }
     }
 });
-

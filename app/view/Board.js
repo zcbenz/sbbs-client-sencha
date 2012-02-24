@@ -17,6 +17,11 @@ Ext.define('Sbbs.view.Board', {
                         id: 'board-back',
                         cls: 'x-button-back',
                         text: '返回'
+                    },
+                    {
+                        id: 'board-change-mode',
+                        text: '模式',
+                        align: 'right'
                     }
                 ]
             },
@@ -73,7 +78,6 @@ Ext.define('Sbbs.view.Board', {
         store.removeAll();
 
         // set and grab
-        proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('name', name);
         // use loadPage instead of load to reset page
         store.loadPage(1, {
@@ -82,6 +86,54 @@ Ext.define('Sbbs.view.Board', {
                 this.list.unmask();
             }
         });
+    },
+
+    onChangeMode: function() {
+        if (!this.sheet) {
+            this.sheet = Ext.create('Ext.ActionSheet', {
+                modal: true,
+                hideOnMaskTap: true,
+                items: [
+                    {
+                        text: '普通模式',
+                        scope: this,
+                        handler: function() {
+                            this.doChangeMode(0);
+                        }
+                    },
+                    {
+                        text: '主题模式',
+                        scope: this,
+                        handler: function() {
+                            this.doChangeMode(1);
+                        }
+                    },
+                    {
+                        text: '论坛模式',
+                        scope: this,
+                        handler: function() {
+                            this.doChangeMode(2);
+                        }
+                    }
+                ]
+            });
+            Ext.Viewport.add(this.sheet);
+        }
+
+        this.sheet.getItems().items[config.boardMode].setUi('confirm');
+        this.sheet.show();
+    },
+
+    doChangeMode: function(mode) {
+        this.sheet.hide();
+        if (mode == config.boardMode) return;
+
+        // reset old mode's ui
+        this.sheet.getItems().items[config.boardMode].setUi('normal');
+
+        // change mode and force refresh
+        config.setBoardMode(mode);
+        this.down('list').getStore().loadPage(1);
     }
 });
 
