@@ -13,7 +13,12 @@ Ext.define('Sbbs.store.Topic', {
                 rootProperty: 'topics'
             }
         },
-        autoLoad: false
+        autoLoad: false,
+        listeners: {
+            beforeload: function(store) {
+                store.getProxy().setExtraParam('token', config.api_token);
+            }
+        }
     }
 });
 

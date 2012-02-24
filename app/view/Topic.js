@@ -71,7 +71,6 @@ Ext.define('Sbbs.view.Topic', {
         store.removeAll();
 
         // set and grab
-        proxy.setExtraParam('token', config.api_token);
         proxy.setExtraParam('board', record.get('board'));
         proxy.setExtraParam('id', record.get('id'));
         // use loadPage instead of load to reset page
