@@ -17,7 +17,7 @@ Ext.define('Sbbs.view.Favorites', {
             ui: 'dark'
         },
 
-        store: Ext.create('Sbbs.store.Favorites'),
+        store: Ext.create('Sbbs.store.Favorites')
     },
 
     getItemTextTpl: function() {

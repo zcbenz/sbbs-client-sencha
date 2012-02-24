@@ -6,12 +6,12 @@ Ext.application({
     icon: 'resources/images/icon.png',
     glossOnIcon: false,
 
+    stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
     views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots',
             'Front', 'Sections', 'Topboards', 'Search', 'Topten', 'Favorites',
             'Topic', 'Board', 'Viewer'],
-    controllers: ['ReadWrap', 'Front', 'Topten', 'Favorites'],
+    controllers: ['ReadWrap', 'Login'],
     models: ['Section', 'Board', 'Topic'],
-    stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
     profiles: ['Tablet', 'Phone'],
 
     showLogin: function() {
@@ -20,5 +20,9 @@ Ext.application({
         }
 
         this.login.show();
+    },
+
+    isLogin: function() {
+        return !!config.api_token;
     }
 });

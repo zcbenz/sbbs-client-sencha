@@ -42,9 +42,10 @@ Ext.define('Sbbs.view.Login', {
                     },
                     {
                         flex: 2,
+                        id: 'login-button',
                         xtype: 'button',
                         ui: 'confirm',
-                        text: '登录'
+                        text: '登录',
                     }
                 ]
             }

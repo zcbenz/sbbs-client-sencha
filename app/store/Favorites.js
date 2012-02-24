@@ -15,6 +15,11 @@ Ext.define('Sbbs.store.Favorites', {
         autoLoad: true,
         listeners: {
             beforeload: function(store) {
+                // don't show Favorites if not logined
+                if (!Sbbs.app.isLogin())
+                     return false;
+
+                // automatically set token for loading
                 store.getProxy().setExtraParam('token', config.api_token);
             }
         }

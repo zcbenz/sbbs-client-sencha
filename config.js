@@ -67,10 +67,10 @@ var config = {
     },
 
     // API Settings
-    api_token: 'Zm9vbA==:==wdlloHYLkEW0n2ltyx5QKO',
+    api_token: '',
     api_base: 'http://bbs.seu.edu.cn/napi',
 
-    set_api_token: function (token) {
+    setApiToken: function (token) {
         config.api_token = token;
         localStorage.api_token = token;
     }
