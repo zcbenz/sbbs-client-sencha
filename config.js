@@ -82,8 +82,10 @@ function timestamp2date(time) {
 
     if (now.getDay() == date.getDay() && now.getMonth() == date.getMonth() && now.getFullYear() == date.getFullYear())
         return hour + ':' + minute;
-    else
+    else if (now.getFullYear() == date.getFullYear())
         return (date.getMonth() + 1) + '月' + date.getDay() + '日, ' + hour + ':' + minute;
+    else
+        return date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDay() + '日, ' + hour + ':' + minute;
 }
 
 function time_padding_2(time) {
