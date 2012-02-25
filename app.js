@@ -7,12 +7,14 @@ Ext.application({
     glossOnIcon: false,
 
     stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
-    views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots',
+    views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots', 'Account',
             'Front', 'Sections', 'Topboards', 'Search', 'Topten', 'Favorites',
             'Topic', 'Board', 'Viewer'],
-    controllers: ['ReadWrap', 'Login'],
+    controllers: ['ReadWrap', 'Login', 'Account'],
     models: ['Section', 'Board', 'Topic'],
     profiles: ['Tablet', 'Phone'],
+
+    refreshAfterLogins: [],
 
     showLogin: function() {
         if (!this.login) {

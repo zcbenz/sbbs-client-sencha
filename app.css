@@ -51,3 +51,20 @@
 .topic-content-item .time {
     float: right;
 }
+
+.x-form-label-sbbs {
+    width: 100%;
+    background-color: #F7F7F7;
+    border-top: 1px solid white;
+    display: block !important;
+    color: #333;
+    text-shadow: rgba(255, 255, 255, 0.25) 0 0.08em 0;
+    padding: 0.6em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em;
+}

@@ -1,6 +1,6 @@
 Ext.define('Sbbs.view.Login', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.login',
+    xtype: 'login',
     requires: ['Ext.field.Password'],
 
     config: {

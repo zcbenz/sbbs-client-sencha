@@ -15,8 +15,10 @@
  *        model: 'Contact',
  *        sorters: 'lastName',
  *
- *        getGroupString: function(record) {
- *            return record.get('lastName')[0];
+ *        grouper: {
+ *            groupFn: function(record) {
+ *                return record.get('lastName')[0];
+ *            }
  *        },
  *
  *        data: [
@@ -40,12 +42,12 @@
  *     Ext.create('Ext.List', {
  *        fullscreen: true,
  *        itemTpl: '<div class="contact">{firstName} <strong>{lastName}</strong></div>',
- *        store: store
+ *        store: store,
+ *        grouped: true
  *     });
  *
 */
 Ext.define('Sbbs.plugin.FrontList', {
-    alternateClassName: 'Ext.FrontList',
     extend: 'Ext.dataview.DataView',
     xtype : 'frontlist',
 
@@ -105,23 +107,26 @@ Ext.define('Sbbs.plugin.FrontList', {
          * Whether or not to group items in the provided Store with a header for each item.
          * @accessor
          */
-        grouped: null,
+        grouped: false,
 
         /**
          * @cfg {Boolean/Function/Object} onItemDisclosure
          * True to display a disclosure icon on each list item.
-         * This won't bind a listener to the tap event. The list
-         * will still fire the disclose event though.
-         * By setting this config to a function, it will automatically
-         * add a tap event listeners to the disclosure buttons which
-         * will fire your function.
+         * The list will still fire the disclose event, and the event can be stopped before itemtap.
+         * By setting this config to a function, the function passed will be called when the disclosure
+         * is tapped.
          * Finally you can specify an object with a 'scope' and 'handler'
          * property defined. This will also be bound to the tap event listener
          * and is useful when you want to change the scope of the handler.
          * @accessor
          */
-        onItemDisclosure: null
+        onItemDisclosure: null,
 
+        /**
+         * @cfg {String} ui
+         * The style of this list. Available options are `normal` and `round`.
+         */
+        ui: 'normal'
 
         /**
          * @cfg {Boolean} useComponents
@@ -167,13 +172,13 @@ Ext.define('Sbbs.plugin.FrontList', {
     },
 
     // apply to the selection model to maintain visual UI cues
-    onItemTrigger: function(container, target, index, e) {
+    onItemTrigger: function(me, index, target, record, e) {
         if (!(this.getPreventSelectionOnDisclose() && Ext.fly(e.target).hasCls(this.getBaseCls() + '-disclosure'))) {
             this.callParent(arguments);
         }
     },
 
-    doInitialize: function() {
+    initialize: function() {
         var me = this,
             container;
 
@@ -184,7 +189,7 @@ Ext.define('Sbbs.plugin.FrontList', {
         }));
         container.dataview = me;
 
-        container.on(me.getTriggerEvent(), me.onItemTrigger, me);
+        me.on(me.getTriggerEvent(), me.onItemTrigger, me);
 
         container.element.on({
             delegate: '.' + this.getBaseCls() + '-disclosure',
@@ -208,6 +213,15 @@ Ext.define('Sbbs.plugin.FrontList', {
         }
     },
 
+    updateInline: function(newInline) {
+        this.callParent(arguments);
+        if (newInline) {
+            this.setOnItemDisclosure(false);
+            this.setIndexBar(false);
+            this.setGrouped(false);
+        }
+    },
+
     applyIndexBar: function(indexBar) {
         return Ext.factory(indexBar, Ext.dataview.IndexBar, this.getIndexBar());
     },
@@ -226,12 +240,24 @@ Ext.define('Sbbs.plugin.FrontList', {
     },
 
     updateGrouped: function(grouped) {
+        var baseCls = this.getBaseCls(),
+            cls = baseCls + '-grouped',
+            unCls = baseCls + '-ungrouped';
+
         if (grouped) {
+            this.addCls(cls);
+            this.removeCls(unCls);
             this.doRefreshHeaders();
             this.updatePinHeaders(this.getPinHeaders());
         }
         else {
-            this.container.doRemoveHeaders();
+            this.addCls(unCls);
+            this.removeCls(cls);
+
+            if (this.container) {
+                this.container.doRemoveHeaders();
+            }
+
             this.updatePinHeaders(null);
         }
     },

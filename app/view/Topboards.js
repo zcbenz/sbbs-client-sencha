@@ -18,6 +18,7 @@ Ext.define('Sbbs.view.Topboards', {
                 id: 'topboards-list',
                 xtype: 'list',
 
+                disableSelection: true,
                 loadingText: '载入中...',
                 plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 

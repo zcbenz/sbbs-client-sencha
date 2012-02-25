@@ -7,6 +7,7 @@ Ext.define('Sbbs.controller.ReadWrap', {
             tabpanel: 'tabpanel',
             board: 'board',
             topic: 'topic',
+            favlist: '#fav-list',
             backButton1: '#topic-back',
             backButton2: '#board-back'
         },
@@ -26,10 +27,11 @@ Ext.define('Sbbs.controller.ReadWrap', {
             '#topboards-list': {
                 scope: this,
                 itemtap: function(list, index, target, record) {
+                    list.deselectAll();
                     this.onReadBoard(list, list, index, target, record);
                 }
             },
-            '#fav-list': {
+            favlist: {
                 leafitemtap: 'onReadBoard'
             },
             '#sections-list': {
@@ -51,11 +53,14 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     launch: function () {
-        // create viewer lazily
-        if (!this.viewer) {
-            this.viewer = Ext.create('Sbbs.view.Viewer');
-        }
+        // create viewer
+        this.viewer = Ext.create('Sbbs.view.Viewer');
 
+        // add Favorites to login hooks
+        Sbbs.app.refreshAfterLogins.push(this.getFavlist().getStore());
+    },
+
+    setButtonText: function() {
         // and set the back text according ot current tab
         var id = this.getTabpanel().getActiveItem().getItemId();
         var index = id[id.length - 1] - 1;
@@ -65,27 +70,28 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     onReadTopic: function (list, index, target, record) {
-        this.launch();
+        this.setButtonText();
 
         // show Topic
         this.viewer.setTopic(record);
         this.viewer.topicRecord = record;
         this.getTabpanel().getActiveItem().push(this.viewer);
+
         list.deselectAll();
     },
 
     onReadBoard: function (nestedlist, list, index, target, record) {
-        this.launch();
+        this.setButtonText();
+        list.deselectAll();
 
         // show board
         this.viewer.setBoard(record);
         this.viewer.boardRecord = record;
         this.getTabpanel().getActiveItem().push(this.viewer);
-        list.deselectAll();
     },
 
     onTopicToBoard: function() {
-        this.launch();
+        this.setButtonText();
 
         var record = this.viewer.topicRecord;
         this.viewer.setBoardFromTopic(record);

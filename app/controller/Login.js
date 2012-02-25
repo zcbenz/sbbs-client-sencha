@@ -18,7 +18,14 @@ Ext.define('Sbbs.controller.Login', {
             method: 'POST',
             waitMsg: '登录中...',
             success: function(form, result) {
+                // update api token
                 config.setApiToken(result.token);
+
+                // refresh views
+                for (i in Sbbs.app.refreshAfterLogins) {
+                    Sbbs.app.refreshAfterLogins[i].load();
+                }
+
                 form.hide();
             },
             failure: function(form, result) {
