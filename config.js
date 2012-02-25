@@ -59,28 +59,30 @@ var config = {
         '</div>'
     ].join(''),
 
+    attributes: ['apiToken', 'boardMode', 'userId', 'userName'],
+
     // Board mode
     boardMode: 2,
     setBoardMode: function(mode) {
-        config.boardMode = mode;
-        localStorage.boardMode = mode;
+        localStorage.boardMode = config.boardMode = mode;
     },
 
     // API Settings
-    api_token: '',
-    api_base: 'http://bbs.seu.edu.cn/napi',
+    apiToken: '',
+    apiBase: 'http://bbs.seu.edu.cn/napi',
 
     setApiToken: function (token) {
-        config.api_token = token;
-        localStorage.api_token = token;
+        localStorage.apiToken = config.apiToken = token.token;
+        localStorage.userId   = config.userId   = token.id;
+        localStorage.userName = config.userName = token.name;
     }
 }
 
-if ('api_token' in localStorage) {
-    config.api_token = localStorage.api_token;
-}
-if ('boardMode' in localStorage) {
-    config.boardMode = localStorage.boardMode;
+// read from localStorage
+for (i in config.attributes) {
+    var name = config.attributes[i];
+    if (name in localStorage)
+        config[name] = localStorage[name];
 }
 
 function timestamp2date(time) {

@@ -7,7 +7,7 @@ Ext.define('Sbbs.store.Board', {
 
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/board/get.json',
+            url: config.apiBase + '/board/get.json',
             reader: {
                 type: 'json',
                 rootProperty: 'topics'
@@ -18,7 +18,7 @@ Ext.define('Sbbs.store.Board', {
             beforeload: function(store) {
                 var map = [0, 1, 3];
                 var proxy = store.getProxy();
-                proxy.setExtraParam('token', config.api_token);
+                proxy.setExtraParam('token', config.apiToken);
                 proxy.setExtraParam('mode', map[config.boardMode]);
             }
         }

@@ -11,7 +11,7 @@ Ext.define('Sbbs.store.SectionHots', {
         },
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/hot/topics.json',
+            url: config.apiBase + '/hot/topics.json',
             extraParams: {
                 flat: true
             },

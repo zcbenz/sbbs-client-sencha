@@ -57,7 +57,12 @@ Ext.define('Sbbs.controller.ReadWrap', {
         this.viewer = Ext.create('Sbbs.view.Viewer');
 
         // add Favorites to login hooks
-        Sbbs.app.refreshAfterLogins.push(this.getFavlist().getStore());
+        Sbbs.app.refreshAfterLogins.push({
+            scope: this,
+            fn: function() {
+                this.getFavlist().getStore().load();
+            }
+        });
     },
 
     setButtonText: function() {

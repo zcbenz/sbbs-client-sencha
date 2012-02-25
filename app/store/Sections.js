@@ -6,7 +6,7 @@ Ext.define('Sbbs.store.Sections', {
         model: 'Sbbs.model.Board',
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/sections.json',
+            url: config.apiBase + '/sections.json',
             reader: {
                 type: 'json',
                 rootProperty: 'boards'
@@ -15,7 +15,7 @@ Ext.define('Sbbs.store.Sections', {
         autoLoad: true,
         listeners: {
             beforeload: function(store) {
-                store.getProxy().setExtraParam('token', config.api_token);
+                store.getProxy().setExtraParam('token', config.apiToken);
             }
         }
     }

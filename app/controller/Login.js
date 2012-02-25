@@ -14,16 +14,17 @@ Ext.define('Sbbs.controller.Login', {
 
     onLogin: function() {
         this.getLogin().submit({
-            url: config.api_base + '/token.json',
+            url: config.apiBase + '/token.json',
             method: 'POST',
             waitMsg: '登录中...',
             success: function(form, result) {
                 // update api token
-                config.setApiToken(result.token);
+                config.setApiToken(result);
 
                 // refresh views
                 for (i in Sbbs.app.refreshAfterLogins) {
-                    Sbbs.app.refreshAfterLogins[i].load();
+                    var obj = Sbbs.app.refreshAfterLogins[i];
+                    obj.fn.call(obj.scope);
                 }
 
                 form.hide();

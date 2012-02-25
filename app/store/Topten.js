@@ -6,7 +6,7 @@ Ext.define('Sbbs.store.Topten', {
         model: 'Sbbs.model.Topic',
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/hot/topten.json',
+            url: config.apiBase + '/hot/topten.json',
             reader: {
                 type: 'json',
                 rootProperty: 'topics'

@@ -6,7 +6,7 @@ Ext.define('Sbbs.store.Favorites', {
         model: 'Sbbs.model.Board',
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/fav/list.json',
+            url: config.apiBase + '/fav/list.json',
             reader: {
                 type: 'json',
                 rootProperty: 'boards'
@@ -20,7 +20,7 @@ Ext.define('Sbbs.store.Favorites', {
                      return false;
 
                 // automatically set token for loading
-                store.getProxy().setExtraParam('token', config.api_token);
+                store.getProxy().setExtraParam('token', config.apiToken);
             }
         }
     }

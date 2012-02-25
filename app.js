@@ -25,6 +25,6 @@ Ext.application({
     },
 
     isLogin: function() {
-        return !!config.api_token;
+        return !!config.apiToken;
     }
 });

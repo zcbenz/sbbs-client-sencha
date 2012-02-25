@@ -7,7 +7,7 @@ Ext.define('Sbbs.store.Topic', {
 
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/topic/get.json',
+            url: config.apiBase + '/topic/get.json',
             reader: {
                 type: 'json',
                 rootProperty: 'topics'
@@ -16,7 +16,7 @@ Ext.define('Sbbs.store.Topic', {
         autoLoad: false,
         listeners: {
             beforeload: function(store) {
-                store.getProxy().setExtraParam('token', config.api_token);
+                store.getProxy().setExtraParam('token', config.apiToken);
             }
         }
     }

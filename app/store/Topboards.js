@@ -6,7 +6,7 @@ Ext.define('Sbbs.store.Topboards', {
         model: 'Sbbs.model.Board',
         proxy: {
             type: 'ajax',
-            url: config.api_base + '/hot/boards.json',
+            url: config.apiBase + '/hot/boards.json',
             reader: {
                 type: 'json',
                 rootProperty: 'boards'
