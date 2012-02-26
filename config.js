@@ -48,7 +48,11 @@ var config = {
     ].join(''),
 
     topicContentTpl: [
+        '<tpl if="mark">',
+        '<div class="topic-content-item mark">',
+        '<tpl else>',
         '<div class="topic-content-item">',
+        '</tpl>',
             '<div class="info">',
                 '<span class="author">{author}</span>',
                 '<span class="time">{[timestamp2date(values.time)]}</span>',
@@ -56,6 +60,12 @@ var config = {
             '<div class="content">',
                 '{[topic_content_parse(values.content)]}',
             '</div>',
+            '<tpl if="quote">',
+                '<div class="quote">',
+                    '<div class="quoter">引自{quoter}</div>',
+                    '{[topic_content_parse(values.quote)]}',
+                '</div>',
+            '</tpl>',
         '</div>'
     ].join(''),
 
