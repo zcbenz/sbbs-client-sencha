@@ -72,9 +72,9 @@ var config = {
     apiBase: 'http://bbs.seu.edu.cn/napi',
 
     setApiToken: function (token) {
-        localStorage.apiToken = config.apiToken = token.token;
-        localStorage.userId   = config.userId   = token.id;
-        localStorage.userName = config.userName = token.name;
+        localStorage.apiToken = config.apiToken = token.token ? token.token : '';
+        localStorage.userId   = config.userId   = token.id    ? token.id    : '';
+        localStorage.userName = config.userName = token.name  ? token.name  : '';
     }
 }
 

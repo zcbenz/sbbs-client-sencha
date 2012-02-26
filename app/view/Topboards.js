@@ -1,7 +1,7 @@
 Ext.define('Sbbs.view.Topboards', {
     extend: 'Ext.Container',
     xtype: 'topboards',
-    requires: ['Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.store.Topboards'],
+    requires: ['Ext.TitleBar', 'Sbbs.store.Topboards'],
 
     config: {
         layout: 'vbox',
@@ -20,7 +20,6 @@ Ext.define('Sbbs.view.Topboards', {
 
                 disableSelection: true,
                 loadingText: '载入中...',
-                plugins: [ {xclass: 'Sbbs.plugin.PullRefresh'} ],
 
                 store: Ext.create('Sbbs.store.Topboards'),
                 itemTpl: '{description}'
