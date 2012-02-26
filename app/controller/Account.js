@@ -9,6 +9,15 @@ Ext.define('Sbbs.controller.Account', {
             changeuser: '#account-changeuser'
         },
         control: {
+            login: {
+                tap: 'onLogin'
+            },
+            logout: {
+                tap: 'onLogout'
+            },
+            changeuser: {
+                tap: 'onLogin'
+            }
         }
     },
 
@@ -36,6 +45,20 @@ Ext.define('Sbbs.controller.Account', {
             this.getLogin().hide();
             this.getLogout().show();
             this.getChangeuser().show();
+        }
+    },
+
+    onLogin: function() {
+        Sbbs.app.showLogin();
+    },
+
+    onLogout: function() {
+        config.setApiToken({});
+
+        // refresh views
+        for (i in Sbbs.app.refreshAfterLogins) {
+            var obj = Sbbs.app.refreshAfterLogins[i];
+            obj.fn.call(obj.scope);
         }
     }
 });
