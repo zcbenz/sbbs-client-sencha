@@ -22,17 +22,17 @@ Ext.define('Sbbs.controller.Account', {
     },
 
     launch: function() {
-        if (!!this.logined != Sbbs.app.isLogin())
+        if (!!this.logined != config.isLogin())
             this.refreshOnLogin();
 
-        Sbbs.app.refreshAfterLogins.push({
+        config.refreshAfterLogins.push({
             scope: this,
             fn: this.refreshOnLogin
         });
     },
 
     refreshOnLogin: function() {
-        this.logined = Sbbs.app.isLogin();
+        this.logined = config.isLogin();
 
         // change to unlogined mode
         if (!this.logined) {
@@ -49,15 +49,15 @@ Ext.define('Sbbs.controller.Account', {
     },
 
     onLogin: function() {
-        Sbbs.app.showLogin();
+        config.showLogin();
     },
 
     onLogout: function() {
         config.setApiToken({});
 
         // refresh views
-        for (i in Sbbs.app.refreshAfterLogins) {
-            var obj = Sbbs.app.refreshAfterLogins[i];
+        for (i in config.refreshAfterLogins) {
+            var obj = config.refreshAfterLogins[i];
             obj.fn.call(obj.scope);
         }
     }

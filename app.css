@@ -39,10 +39,6 @@
     font-size: 14px;
 }
 
-.x-list-item > .x-list-item-label > .topic-content-item.mark {
-    background: #FBF5D9!important;
-}
-
 .topic-content-item .quote {
     color: #999;
     margin-top: 5px;

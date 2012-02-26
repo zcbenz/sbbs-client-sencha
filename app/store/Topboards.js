@@ -1,6 +1,5 @@
 Ext.define('Sbbs.store.Topboards', {
     extend: 'Ext.data.Store',
-    requires: ['Sbbs.model.Board'],
 
     config: {
         model: 'Sbbs.model.Board',

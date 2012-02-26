@@ -6,25 +6,11 @@ Ext.application({
     icon: 'resources/images/icon.png',
     glossOnIcon: false,
 
+    models: ['Section', 'Board', 'Topic'],
     stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
     views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots', 'Account',
             'Front', 'Sections', 'Topboards', 'Search', 'Topten', 'Favorites',
             'Topic', 'Board', 'Viewer'],
     controllers: ['ReadWrap', 'Login', 'Account'],
-    models: ['Section', 'Board', 'Topic'],
-    profiles: ['Tablet', 'Phone'],
-
-    refreshAfterLogins: [],
-
-    showLogin: function() {
-        if (!this.login) {
-            this.login = Ext.Viewport.add(Ext.create('Sbbs.view.Login'));
-        }
-
-        this.login.show();
-    },
-
-    isLogin: function() {
-        return !!config.apiToken;
-    }
+    profiles: ['Tablet', 'Phone']
 });

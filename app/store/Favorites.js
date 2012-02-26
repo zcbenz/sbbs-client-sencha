@@ -1,6 +1,5 @@
 Ext.define('Sbbs.store.Favorites', {
     extend: 'Ext.data.TreeStore',
-    requires: ['Sbbs.model.Board'],
 
     config: {
         model: 'Sbbs.model.Board',
@@ -16,7 +15,7 @@ Ext.define('Sbbs.store.Favorites', {
         listeners: {
             beforeload: function(store) {
                 // don't show Favorites if not logined
-                if (!Sbbs.app.isLogin())
+                if (!config.isLogin())
                      return false;
 
                 // automatically set token for loading

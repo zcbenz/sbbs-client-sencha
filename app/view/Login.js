@@ -34,7 +34,7 @@ Ext.define('Sbbs.view.Login', {
                         text: '取消',
                         scope: this,
                         handler: function() {
-                            Sbbs.app.login.hide();
+                            config.login.hide();
                         }
                     },
                     {

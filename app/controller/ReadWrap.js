@@ -57,7 +57,7 @@ Ext.define('Sbbs.controller.ReadWrap', {
         this.viewer = Ext.create('Sbbs.view.Viewer');
 
         // add Favorites to login hooks
-        Sbbs.app.refreshAfterLogins.push({
+        config.refreshAfterLogins.push({
             scope: this,
             fn: function() {
                 this.getFavlist().getStore().load();
@@ -146,15 +146,15 @@ Ext.define('Sbbs.controller.ReadWrap', {
     },
 
     onReply: function(record) {
-        if (!Sbbs.app.isLogin()) {
-            Sbbs.app.showLogin();
+        if (!config.isLogin()) {
+            config.showLogin();
             return;
         }
     },
 
     onSendMail: function(record) {
-        if (!Sbbs.app.isLogin()) {
-            Sbbs.app.showLogin();
+        if (!config.isLogin()) {
+            config.showLogin();
             return;
         }
     },

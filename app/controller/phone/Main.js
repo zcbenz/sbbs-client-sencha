@@ -13,8 +13,8 @@ Ext.define('Sbbs.controller.phone.Main', {
         // hook show of Favorites
         if ('ext-readwrap-3' == value.getItemId()) {
             // require login
-            if (!Sbbs.app.isLogin())
-                window.setTimeout('Sbbs.app.showLogin()', 400);
+            if (!config.isLogin())
+                window.setTimeout('config.showLogin()', 400);
         }
     }
 });

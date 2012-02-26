@@ -1,0 +1,979 @@
+{
+    "projectName": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¸ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¾ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ BBSÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ®ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ·ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ«ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯",
+    "licenseText": "Copyright(c) 2012 Zhao Cheng",
+    "builds": [
+        {
+            "name": "All Classes",
+            "target": "all-classes.js",
+            "options": {
+                "debug": true
+            },
+            "files": [
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "Publisher.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "Controller.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "ListenerStack.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "Event.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Point.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "ComponentManager.js"
+                },
+                {
+                    "path": "../sencha-touch/src/behavior/",
+                    "name": "Behavior.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/",
+                    "name": "State.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Mixin.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "XTemplateParser.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Filter.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Sorter.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "Abstract.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "Bounce.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "Dispatcher.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "Dom.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "Dom.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "LineSegment.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Traversable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "XTemplateCompiler.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Observable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Evented.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Abstract.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Slide.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "SlideOut.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Flip.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Pop.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Fade.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "FadeOut.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "PopOut.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/animation/",
+                    "name": "Cube.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/",
+                    "name": "Animation.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "AbstractComponent.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "Default.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "Fit.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "AbstractBox.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "VBox.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "HBox.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "AbstractMixedCollection.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Sortable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "MixedCollection.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "ItemCollection.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "DateExtras.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Format.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Template.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "XTemplate.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "SizeMonitor.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "Momentum.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "BoundMomentum.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Abstract.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Style.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Cover.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Fade.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Flip.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Slide.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Reveal.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Cube.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Pop.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "Linear.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/card/",
+                    "name": "Scroll.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/layout/",
+                    "name": "Card.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "Card.js"
+                },
+                {
+                    "path": "../sencha-touch/src/layout/",
+                    "name": "Layout.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/easing/",
+                    "name": "EaseOut.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/translatable/",
+                    "name": "Abstract.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/translatable/",
+                    "name": "CssTransform.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/translatable/",
+                    "name": "ScrollPosition.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Translatable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/behavior/",
+                    "name": "Translatable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Draggable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/behavior/",
+                    "name": "Draggable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Spacer.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Title.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "Input.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "TextAreaInput.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Mask.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Decorator.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "Field.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "Text.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "TextArea.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/",
+                    "name": "Scroller.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/indicator/",
+                    "name": "Abstract.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/indicator/",
+                    "name": "Default.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/indicator/",
+                    "name": "ScrollPosition.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/indicator/",
+                    "name": "CssTransform.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/",
+                    "name": "Indicator.js"
+                },
+                {
+                    "path": "../sencha-touch/src/scroll/",
+                    "name": "View.js"
+                },
+                {
+                    "path": "../sencha-touch/src/behavior/",
+                    "name": "Scrollable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Toolbar.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Panel.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Sheet.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "MessageBox.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/",
+                    "name": "Touch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "TouchGesture.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Recognizer.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Touch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "SingleTouch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Drag.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Tap.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "DoubleTap.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "LongPress.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Swipe.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "HorizontalSwipe.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "MultiTouch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Pinch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/recognizer/",
+                    "name": "Rotate.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "ComponentQuery.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "ComponentDelegation.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "ComponentPaint.js"
+                },
+                {
+                    "path": "../sencha-touch/src/event/publisher/",
+                    "name": "ComponentSize.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/",
+                    "name": "Base.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/",
+                    "name": "Logger.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/formatter/",
+                    "name": "Formatter.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/writer/",
+                    "name": "Writer.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/writer/",
+                    "name": "Console.js"
+                },
+                {
+                    "path": "../sencha-touch/src/log/formatter/",
+                    "name": "Default.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/runner/",
+                    "name": "Css.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/runner/",
+                    "name": "CssTransition.js"
+                },
+                {
+                    "path": "../sencha-touch/src/fx/",
+                    "name": "Runner.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "LoadMask.js"
+                },
+                {
+                    "path": "../sencha-touch/src/viewport/",
+                    "name": "Default.js"
+                },
+                {
+                    "path": "../sencha-touch/src/viewport/",
+                    "name": "Ios.js"
+                },
+                {
+                    "path": "../sencha-touch/src/viewport/",
+                    "name": "Android.js"
+                },
+                {
+                    "path": "../sencha-touch/src/viewport/",
+                    "name": "Viewport.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Profile.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Action.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "History.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Controller.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Route.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Router.js"
+                },
+                {
+                    "path": "../sencha-touch/src/app/",
+                    "name": "Application.js"
+                },
+                {
+                    "path": "app/profile/",
+                    "name": "Tablet.js"
+                },
+                {
+                    "path": "app/profile/",
+                    "name": "Phone.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Sortable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Filterable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Collection.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Operation.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "ResultSet.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/reader/",
+                    "name": "Reader.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/reader/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/writer/",
+                    "name": "Writer.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/writer/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/proxy/",
+                    "name": "Proxy.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/proxy/",
+                    "name": "Client.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/proxy/",
+                    "name": "Memory.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "SortTypes.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Types.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Field.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/identifier/",
+                    "name": "Simple.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "HashMap.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "AbstractManager.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "ModelManager.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Request.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/proxy/",
+                    "name": "Server.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Connection.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/proxy/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/association/",
+                    "name": "Association.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Inflector.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/association/",
+                    "name": "HasMany.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/association/",
+                    "name": "BelongsTo.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/association/",
+                    "name": "HasOne.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Error.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Errors.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Model.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "StoreManager.js"
+                },
+                {
+                    "path": "../sencha-touch/src/util/",
+                    "name": "Grouper.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Store.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "SectionHots.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Topic.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Section.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Board.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Topboards.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "NodeInterface.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "NodeStore.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "TreeStore.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Sections.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Favorites.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Topten.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Topic.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Board.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Login.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Account.js"
+                },
+                {
+                    "path": "app/view/tablet/",
+                    "name": "Main.js"
+                },
+                {
+                    "path": "app/controller/tablet/",
+                    "name": "Main.js"
+                },
+                {
+                    "path": "app/controller/phone/",
+                    "name": "Main.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "Password.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "TitleBar.js"
+                },
+                {
+                    "path": "app/plugin/",
+                    "name": "ButtonField.js"
+                },
+                {
+                    "path": "app/plugin/",
+                    "name": "ListPaging.js"
+                },
+                {
+                    "path": "../sencha-touch/src/form/",
+                    "name": "FieldSet.js"
+                },
+                {
+                    "path": "../sencha-touch/src/",
+                    "name": "ActionSheet.js"
+                },
+                {
+                    "path": "../sencha-touch/src/field/",
+                    "name": "Checkbox.js"
+                },
+                {
+                    "path": "../sencha-touch/src/carousel/",
+                    "name": "Item.js"
+                },
+                {
+                    "path": "../sencha-touch/src/carousel/",
+                    "name": "Indicator.js"
+                },
+                {
+                    "path": "../sencha-touch/src/navigation/",
+                    "name": "Bar.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/",
+                    "name": "IndexBar.js"
+                },
+                {
+                    "path": "../sencha-touch/src/plugin/",
+                    "name": "PullRefresh.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/",
+                    "name": "ListItemHeader.js"
+                },
+                {
+                    "path": "../sencha-touch/src/mixin/",
+                    "name": "Selectable.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/element/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "../sencha-touch/src/tab/",
+                    "name": "Tab.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/component/",
+                    "name": "DataItem.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Topboards.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Search.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Topic.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "ReadWrap.js"
+                },
+                {
+                    "path": "../sencha-touch/src/form/",
+                    "name": "Panel.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Login.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Account.js"
+                },
+                {
+                    "path": "../sencha-touch/src/carousel/",
+                    "name": "Carousel.js"
+                },
+                {
+                    "path": "../sencha-touch/src/navigation/",
+                    "name": "View.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "ReadWrap.js"
+                },
+                {
+                    "path": "app/plugin/",
+                    "name": "PullRefresh.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Topten.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Hots.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Board.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Viewer.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/element/",
+                    "name": "List.js"
+                },
+                {
+                    "path": "../sencha-touch/src/tab/",
+                    "name": "Bar.js"
+                },
+                {
+                    "path": "../sencha-touch/src/tab/",
+                    "name": "Panel.js"
+                },
+                {
+                    "path": "app/view/phone/",
+                    "name": "Main.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/component/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/",
+                    "name": "DataView.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/",
+                    "name": "List.js"
+                },
+                {
+                    "path": "app/plugin/",
+                    "name": "FrontList.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Front.js"
+                },
+                {
+                    "path": "../sencha-touch/src/dataview/",
+                    "name": "NestedList.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Sections.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "FrontWrap.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Favorites.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "ArrayStore.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/",
+                    "name": "Batch.js"
+                },
+                {
+                    "path": "../sencha-touch/src/data/reader/",
+                    "name": "Array.js"
+                }
+            ]
+        },
+        {
+            "name": "Application - Production",
+            "target": "app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "",
+                    "name": "all-classes.js"
+                },
+                {
+                    "path": "",
+                    "name": "app.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}

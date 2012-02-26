@@ -85,6 +85,21 @@ var config = {
         localStorage.apiToken = config.apiToken = token.token ? token.token : '';
         localStorage.userId   = config.userId   = token.id    ? token.id    : '';
         localStorage.userName = config.userName = token.name  ? token.name  : '';
+    },
+    
+    // login related stuff
+    refreshAfterLogins: [],
+
+    showLogin: function() {
+        if (!config.loginDlg) {
+            config.loginDlg = Ext.Viewport.add(Ext.create('Sbbs.view.Login'));
+        }
+
+        config.loginDlg.show();
+    },
+
+    isLogin: function() {
+        return !!config.apiToken;
     }
 }
 

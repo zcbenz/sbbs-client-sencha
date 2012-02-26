@@ -22,8 +22,8 @@ Ext.define('Sbbs.controller.Login', {
                 config.setApiToken(result);
 
                 // refresh views
-                for (i in Sbbs.app.refreshAfterLogins) {
-                    var obj = Sbbs.app.refreshAfterLogins[i];
+                for (i in config.refreshAfterLogins) {
+                    var obj = config.refreshAfterLogins[i];
                     obj.fn.call(obj.scope);
                 }
 
