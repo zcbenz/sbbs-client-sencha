@@ -25,6 +25,7 @@ Ext.define('Sbbs.controller.Post', {
             xtype: 'loadmask',
             message: '发布中...'
         });
+
         post.submit({
             url: config.apiBase + '/topic/post.json',
             method: 'POST',

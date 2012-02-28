@@ -1,7 +1,7 @@
 Ext.define('Sbbs.view.Topic', {
     extend: 'Ext.Container',
     alias: 'widget.topic',
-    requires: ['Ext.TitleBar', 'Sbbs.plugin.ListPaging', 'Sbbs.store.Topic'],
+    requires: ['Ext.TitleBar', 'Sbbs.plugin.PullRefresh', 'Sbbs.plugin.ListPaging', 'Sbbs.store.Topic'],
 
     config: {
         layout: 'vbox',
@@ -37,6 +37,9 @@ Ext.define('Sbbs.view.Topic', {
                     {
                         xclass: 'Sbbs.plugin.ListPaging',
                         autoPaging: true
+                    },
+                    {
+                        xclass: 'Sbbs.plugin.PullRefresh'
                     }
                 ],
 

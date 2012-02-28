@@ -45,6 +45,14 @@ Ext.define('Sbbs.view.Board', {
 
                 store: Ext.create('Sbbs.store.Board'),
                 itemTpl: config.topicItemTpl
+            },
+            {
+                xtype: 'button',
+                id: 'board-post-button',
+                icon: 'resources/images/add.png',
+                iconAlign: 'center',
+                right: 8,
+                bottom: 10
             }
         ]
     },

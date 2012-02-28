@@ -8,6 +8,7 @@ Ext.define('Sbbs.controller.ReadWrap', {
             board: 'board',
             topic: 'topic',
             favlist: '#fav-list',
+            postButton: '#board-post-button',
             backButton1: '#topic-back',
             backButton2: '#board-back'
         },
@@ -48,6 +49,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
             },
             '#board-change-mode': {
                 tap: 'onChangeMode'
+            },
+            postButton: {
+                tap: 'onBoardPost'
             }
         }
     },
@@ -121,14 +125,14 @@ Ext.define('Sbbs.controller.ReadWrap', {
                             this.onReply.call(this, this.topicSheet.getRecord());
                         }
                     },
-                    {
-                        text: '发站内信',
-                        scope: this,
-                        handler: function() {
-                            this.topicSheet.hide();
-                            this.onSendMail.call(this, this.topicSheet.getRecord());
-                        }
-                    },
+//                    {
+//                        text: '发站内信',
+//                        scope: this,
+//                        handler: function() {
+//                            this.topicSheet.hide();
+//                            this.onSendMail.call(this, this.topicSheet.getRecord());
+//                        }
+//                    },
                     {
                         text: '取消',
                         scope: this,
@@ -152,7 +156,9 @@ Ext.define('Sbbs.controller.ReadWrap', {
         }
         
         this.doShowPost(record);
+        this.post.mode = 'reply';
         this.post.setBaseParams({
+            type: 1,
             board: record.get('board'),
             reid: record.get('id'),
             token: config.apiToken
@@ -168,17 +174,48 @@ Ext.define('Sbbs.controller.ReadWrap', {
         this.doShowPost(record);
     },
 
+    onBoardPost: function() {
+        if (!config.isLogin()) {
+            config.showLogin();
+            return;
+        }
+
+        this.getPostButton().hide();
+        this.doShowPost();
+        this.post.mode = 'new';
+        this.post.setBaseParams({
+            type: 1,
+            board: this.viewer.boardRecord.get('name'),
+            token: config.apiToken
+        });
+
+        // show post button again when post dialog is hide
+        if (!this.post.hideHook) {
+            this.post.hideHook = true;
+            this.post.on({
+                scope: this,
+                hide: function() {
+                    this.getPostButton().show();
+                }
+            });
+        }
+    },
+
     doShowPost: function(record) {
         // the post dialog
         if (!this.post)
             this.post = Ext.Viewport.add(Ext.create('Sbbs.view.Post'));
 
-        var title = record.get('title');
-        if (title.substr(0, 3) != 'Re:')
-            title = 'Re: ' + title;
+        var title = '';
+        if (record) {
+            title = record.get('title');
+            if (title.substr(0, 3) != 'Re:')
+                title = 'Re: ' + title;
+        }
 
         this.post.setValues({
-            title: title
+            title: title,
+            content: ''
         });
         this.post.show();
         this.post.down('#post-content').focus();

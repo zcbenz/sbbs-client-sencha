@@ -71,3 +71,13 @@
     -webkit-border-radius: 0.4em;
     border-radius: 0.4em;
 }
+
+#board-post-button {
+    border: none!important;
+    background: none!important;
+}
+
+#board-post-button .x-button-icon {
+    width: 48px;
+    height: 48px;
+}
