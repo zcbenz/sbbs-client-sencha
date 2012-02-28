@@ -150,6 +150,13 @@ Ext.define('Sbbs.controller.ReadWrap', {
             config.showLogin();
             return;
         }
+        
+        this.doShowPost(record);
+        this.post.setBaseParams({
+            board: record.get('board'),
+            reid: record.get('id'),
+            token: config.apiToken
+        });
     },
 
     onSendMail: function(record) {
@@ -157,6 +164,24 @@ Ext.define('Sbbs.controller.ReadWrap', {
             config.showLogin();
             return;
         }
+
+        this.doShowPost(record);
+    },
+
+    doShowPost: function(record) {
+        // the post dialog
+        if (!this.post)
+            this.post = Ext.Viewport.add(Ext.create('Sbbs.view.Post'));
+
+        var title = record.get('title');
+        if (title.substr(0, 3) != 'Re:')
+            title = 'Re: ' + title;
+
+        this.post.setValues({
+            title: title
+        });
+        this.post.show();
+        this.post.down('#post-content').focus();
     },
 
     onChangeMode: function() {

@@ -7,21 +7,27 @@ Ext.define('Sbbs.view.Post', {
         hideOnMaskTap: true,
         centered: true,
         width: 300,
-        height: 344,
+        height: 448,
         items: [
             {
                 xtype: 'fieldset',
                 items: [
                     {
+                        id: 'post-title',
                         xtype: 'textfield',
+                        clearIcon: false,
                         name: 'title',
+                        labelAlign: 'top',
                         label: '标题'
                     },
                     {
+                        id: 'post-content',
                         xtype: 'textareafield',
+                        clearIcon: false,
                         name: 'content',
+                        labelAlign: 'top',
                         label: '内容',
-                        maxRows: 8
+                        maxRows: 9
                     }
                 ]
             },

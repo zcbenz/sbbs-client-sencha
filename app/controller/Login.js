@@ -13,10 +13,13 @@ Ext.define('Sbbs.controller.Login', {
     },
 
     onLogin: function() {
+        this.getLogin().setMasked({
+            xtype: 'loadmask',
+            message: '登录中...'
+        });
         this.getLogin().submit({
             url: config.apiBase + '/token.json',
             method: 'POST',
-            waitMsg: '登录中...',
             success: function(form, result) {
                 // update api token
                 config.setApiToken(result);
@@ -27,9 +30,11 @@ Ext.define('Sbbs.controller.Login', {
                     obj.fn.call(obj.scope);
                 }
 
+                form.unmask();
                 form.hide();
             },
             failure: function(form, result) {
+                form.unmask();
                 if (!result)
                     Ext.Msg.alert('错误', '无法连接到服务器', Ext.emptyFn);
                 else

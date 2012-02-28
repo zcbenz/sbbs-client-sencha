@@ -9,8 +9,9 @@ Ext.application({
     models: ['Section', 'Board', 'Topic'],
     stores: ['Sections', 'Topten', 'Favorites', 'Topic', 'Board', 'SectionHots'],
     views: ['Login', 'ReadWrap', 'FrontWrap', 'Hots', 'Account',
+            'Post',
             'Front', 'Sections', 'Topboards', 'Search', 'Topten', 'Favorites',
             'Topic', 'Board', 'Viewer'],
-    controllers: ['ReadWrap', 'Login', 'Account'],
+    controllers: ['Post', 'ReadWrap', 'Login', 'Account'],
     profiles: ['Tablet', 'Phone']
 });
